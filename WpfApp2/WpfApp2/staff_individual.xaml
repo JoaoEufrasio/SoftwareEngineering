@@ -1,0 +1,29 @@
+﻿<Window x:Name="staff_details" x:Class="WpfApp2.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Staff Details" Height="350" Width="520" ResizeMode="NoResize">
+    <Grid Cursor="Hand">
+        <Button x:Name="bt_bookings" Content="Bookings" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Click="btn_ookings_Click" Height="37" Cursor="Hand"/>
+        <Button x:Name="bt_patients" Content="Patients" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Height="37"/>
+        <Button x:Name="bt_home" Content="Home" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand"/>
+        <Calendar x:Name="staff_calendar" HorizontalAlignment="Left" Margin="313,121,0,0" VerticalAlignment="Top"/>
+        <ListView HorizontalAlignment="Left" Height="157" Margin="28,121,0,0" VerticalAlignment="Top" Width="161" SelectionChanged="ListView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+            <ListBoxItem x:Name="date_shift" Content="Date-Shift" Width="108" Selected="ListBoxItem_Selected" FontWeight="Bold" FontStyle="Italic" Height="33"/>
+            <ScrollBar x:Name="shift_list_scroller" Height="96" Width="32"/>
+        </ListView>
+        <Label x:Name="staff_shift_week" Content="Shift(Date)" HorizontalAlignment="Left" Margin="28,96,0,0" VerticalAlignment="Top" Height="25" Width="122"/>
+        <TextBox x:Name="staff_details_box" HorizontalAlignment="Left" Height="49" Margin="28,42,0,0" TextWrapping="Wrap" Text="Name-Staff ID-Address-Contact Details-DOB-Role" VerticalAlignment="Top" Width="283" TextChanged="TextBox_TextChanged"/>
+        <Image HorizontalAlignment="Left" Height="24" Margin="155,97,0,0" VerticalAlignment="Top" Width="26" Source="edit_button.png"/>
+        <Image HorizontalAlignment="Left" Height="24" Margin="-1,44,0,0" VerticalAlignment="Top" Width="26" Source="back_icon.ico"/>
+
+    </Grid>
+</Window>

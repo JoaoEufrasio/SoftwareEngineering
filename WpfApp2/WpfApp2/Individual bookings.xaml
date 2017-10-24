@@ -1,0 +1,21 @@
+﻿<Window x:Name="individual_booking" x:Class="WpfApp2.Individual_bookings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Individual Bookings" Height="350" Width="520">
+    <Grid>
+        <Button x:Name="bt_home" Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37"/>
+        <Button x:Name="bt_patients" Content="Patients" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Height="37"/>
+        <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand"/>
+        <Image HorizontalAlignment="Left" Height="24" Margin="10,42,0,0" VerticalAlignment="Top" Width="26" Source="back_icon.ico"/>
+        <Button x:Name="bt_cancel_booking" Content="Cancel Booking" HorizontalAlignment="Left" Margin="313,91,0,0" VerticalAlignment="Top" Width="179" Height="50" Cursor="Hand"/>
+        <Button x:Name="bt_save_changes" Content="Save Changes" HorizontalAlignment="Left" Margin="313,195,0,0" VerticalAlignment="Top" Width="179" Height="50"/>
+        <TextBox HorizontalAlignment="Left" Height="161" Margin="28,107,0,0" TextWrapping="Wrap" Text="Patient Name-ID-Date/Time-Doctor-Room-Description" VerticalAlignment="Top" Width="157"/>
+        <Label x:Name="booking_details_view" Content="Booking Details" HorizontalAlignment="Left" Margin="28,78,0,0" VerticalAlignment="Top" Height="29" Width="113"/>
+        <Image HorizontalAlignment="Left" Height="24" Margin="159,78,0,0" VerticalAlignment="Top" Width="26" Source="edit_button.png"/>
+
+    </Grid>
+</Window>

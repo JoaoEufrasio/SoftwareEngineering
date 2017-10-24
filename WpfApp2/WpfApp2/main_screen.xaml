@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp2.main_screen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="main_screen" Height="350" Width="520">
+    <Grid>
+        <Button x:Name="bt_bookings" Content="Booking" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37"/>
+        <Button x:Name="bt_patients" Content="Patients" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37"/>
+        <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand"/>
+        <Button x:Name="bt_register_patient" Content="Register Patient" HorizontalAlignment="Left" Margin="384,91,0,0" VerticalAlignment="Top" Width="100" Height="50"/>
+        <Button x:Name="bt_new_booking" Content="New Booking" HorizontalAlignment="Left" Margin="265,91,0,0" VerticalAlignment="Top" Width="100" Cursor="Hand" Height="50"/>
+        <TextBox x:Name="search_patient" HorizontalAlignment="Left" Height="24" Margin="402,179,0,0" TextWrapping="Wrap" Text="Search Patient" VerticalAlignment="Top" Width="89" Cursor="IBeam"/>
+        <TextBox x:Name="search_booking" HorizontalAlignment="Left" Height="24" Margin="276,179,0,0" TextWrapping="Wrap" Text="Search Booking" VerticalAlignment="Top" Width="89" Cursor="IBeam"/>
+        <Image x:Name="search_booking_icon" HorizontalAlignment="Left" Height="24" Margin="250,179,0,0" VerticalAlignment="Top" Width="26" Source="search_icon.PNG"/>
+        <Image x:Name="search_patient_icon" HorizontalAlignment="Left" Height="24" Margin="376,179,0,0" VerticalAlignment="Top" Width="26" Source="search_icon.PNG"/>
+        <ListView x:Name="list_todays_patient" HorizontalAlignment="Left" Height="206" Margin="25,91,0,0" VerticalAlignment="Top" Width="178">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+            <ListBoxItem Content="Patient Name-GP-Time-Room" Height="22" Width="134"/>
+            <ScrollBar Height="155" Width="24"/>
+        </ListView>
+        <Label x:Name="todays_patient" Content="Todays's Patient" HorizontalAlignment="Left" Margin="25,64,0,0" VerticalAlignment="Top" Height="27" Width="99"/>
+
+    </Grid>
+</Window>
