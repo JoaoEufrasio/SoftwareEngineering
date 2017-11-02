@@ -15,3 +15,6 @@ C:\Users\aleen\source\repos\WpfApp2\WpfApp2\obj\Debug\staff_menu.g.cs
 C:\Users\aleen\source\repos\WpfApp2\WpfApp2\obj\Debug\staff_menu.baml
 C:\Users\aleen\source\repos\WpfApp2\WpfApp2\obj\Debug\staff_individual.g.cs
 C:\Users\aleen\source\repos\WpfApp2\WpfApp2\obj\Debug\staff_individual.baml
+D:\Stuff\Downloads\SoftwareEngineering-master\SoftwareEngineering-master\WpfApp2\WpfApp2\bin\Debug\WpfApp2.exe.config
+D:\Stuff\Downloads\SoftwareEngineering-master\SoftwareEngineering-master\WpfApp2\WpfApp2\obj\Debug\WpfApp2.exe
+D:\Stuff\Downloads\SoftwareEngineering-master\SoftwareEngineering-master\WpfApp2\WpfApp2\obj\Debug\WpfApp2.pdb

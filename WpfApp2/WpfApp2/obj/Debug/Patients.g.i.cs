@@ -124,12 +124,24 @@ namespace WpfApp2 {
             return;
             case 2:
             this.bt_booking = ((System.Windows.Controls.Button)(target));
+            
+            #line 11 "..\..\Patients.xaml"
+            this.bt_booking.Click += new System.Windows.RoutedEventHandler(this.bt_booking_Click);
+            
+            #line default
+            #line hidden
             return;
             case 3:
             this.bt_staff = ((System.Windows.Controls.Button)(target));
             return;
             case 4:
             this.bt_register_patient = ((System.Windows.Controls.Button)(target));
+            
+            #line 13 "..\..\Patients.xaml"
+            this.bt_register_patient.Click += new System.Windows.RoutedEventHandler(this.bt_register_patient_Click);
+            
+            #line default
+            #line hidden
             return;
             case 5:
             this.todays_patient = ((System.Windows.Controls.Label)(target));

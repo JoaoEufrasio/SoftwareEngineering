@@ -23,5 +23,15 @@ namespace WpfApp2
         {
             InitializeComponent();
         }
+
+        private void bt_register_patient_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void bt_booking_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
