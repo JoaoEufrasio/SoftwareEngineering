@@ -1,0 +1,14 @@
+c:\users\cristina\documents\visual studio 2013\Projects\Test2017\Test2017\bin\Debug\Test2017.exe.config
+c:\users\cristina\documents\visual studio 2013\Projects\Test2017\Test2017\bin\Debug\patients.mdf
+c:\users\cristina\documents\visual studio 2013\Projects\Test2017\Test2017\bin\Debug\patients_log.ldf
+c:\users\cristina\documents\visual studio 2013\Projects\Test2017\Test2017\bin\Debug\Test2017.exe
+c:\users\cristina\documents\visual studio 2013\Projects\Test2017\Test2017\bin\Debug\Test2017.pdb
+c:\users\cristina\documents\visual studio 2013\Projects\Test2017\Test2017\obj\Debug\Test2017.Form1.resources
+c:\users\cristina\documents\visual studio 2013\Projects\Test2017\Test2017\obj\Debug\Test2017.Properties.Resources.resources
+c:\users\cristina\documents\visual studio 2013\Projects\Test2017\Test2017\obj\Debug\Test2017.csproj.GenerateResource.Cache
+c:\users\cristina\documents\visual studio 2013\Projects\Test2017\Test2017\obj\Debug\Test2017.exe
+c:\users\cristina\documents\visual studio 2013\Projects\Test2017\Test2017\obj\Debug\Test2017.pdb
+C:\Users\Cristina\Documents\Visual Studio 2013\Projects\Test2017\Test2017\obj\Debug\Test2017.csprojResolveAssemblyReference.cache
+D:\Stuff\Downloads\TestDatabase_v2\Test2017\Test2017\bin\Debug\Test2017.exe.config
+D:\Stuff\Downloads\TestDatabase_v2\Test2017\Test2017\obj\Debug\Test2017.exe
+D:\Stuff\Downloads\TestDatabase_v2\Test2017\Test2017\obj\Debug\Test2017.pdb
