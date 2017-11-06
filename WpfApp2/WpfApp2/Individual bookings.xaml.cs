@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -22,6 +23,14 @@ namespace WpfApp2
         public Individual_bookings()
         {
             InitializeComponent();
+        }
+
+        private void bt_cancel_booking_Click(object sender, RoutedEventArgs e)
+        {
+            // confirmation pop up message
+            System.Windows.Forms.MessageBox.Show("Are you sure want to cancel booking?", "Cancel Booking",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk); 
+
         }
     }
 }

@@ -11,11 +11,11 @@
         <Button x:Name="bt_patients" Content="Patients" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Height="37"/>
         <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand"/>
         <Image HorizontalAlignment="Left" Height="24" Margin="10,42,0,0" VerticalAlignment="Top" Width="26" Source="back_icon.ico"/>
-        <Button x:Name="bt_cancel_booking" Content="Cancel Booking" HorizontalAlignment="Left" Margin="313,91,0,0" VerticalAlignment="Top" Width="179" Height="50" Cursor="Hand"/>
+        <Button x:Name="bt_cancel_booking" Content="Cancel Booking" HorizontalAlignment="Left" Margin="313,91,0,0" VerticalAlignment="Top" Width="179" Height="50" Cursor="Hand" Click="bt_cancel_booking_Click"/>
         <Button x:Name="bt_save_changes" Content="Save Changes" HorizontalAlignment="Left" Margin="313,195,0,0" VerticalAlignment="Top" Width="179" Height="50"/>
         <TextBox HorizontalAlignment="Left" Height="161" Margin="28,107,0,0" TextWrapping="Wrap" Text="Patient Name-ID-Date/Time-Doctor-Room-Description" VerticalAlignment="Top" Width="157"/>
         <Label x:Name="booking_details_view" Content="Booking Details" HorizontalAlignment="Left" Margin="28,78,0,0" VerticalAlignment="Top" Height="29" Width="113"/>
-        <Image HorizontalAlignment="Left" Height="24" Margin="159,78,0,0" VerticalAlignment="Top" Width="26" Source="edit_button.png"/>
+        <Image x:Name="edit_bookings" HorizontalAlignment="Left" Height="24" Margin="159,78,0,0" VerticalAlignment="Top" Width="26" Source="edit_button.png"/>
 
     </Grid>
 </Window>
