@@ -28,5 +28,12 @@ namespace WpfApp2
         {
 
         }
+        private void bt_cancel_booking_Click(object sender, RoutedEventArgs e)
+        {
+            // confirmation pop up message
+            System.Windows.Forms.MessageBox.Show("Are you sure want to cancel booking", "Cancel Booking",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
+
+        }
     }
 }
