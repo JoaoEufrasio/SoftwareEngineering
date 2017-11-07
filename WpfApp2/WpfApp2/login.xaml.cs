@@ -23,5 +23,10 @@ namespace WpfApp2
         {
             InitializeComponent();
         }
+
+        private void bt_login_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

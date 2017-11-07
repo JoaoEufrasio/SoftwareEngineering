@@ -28,9 +28,25 @@ namespace WpfApp2
         private void bt_cancel_booking_Click(object sender, RoutedEventArgs e)
         {
             // confirmation pop up message
-            System.Windows.Forms.MessageBox.Show("Are you sure want to cancel booking?", "Cancel Booking",
-                MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk); 
+            System.Windows.Forms.MessageBox.Show("Are you sure want to cancel booking", "Cancel Booking",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
 
+        }
+
+        private void tb_name_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void bt_save_changes_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.MessageBox.Show("Are you sure want to save changes", "Save Booking Changes",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+
+        private void tb_patient_id_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
         }
     }
 }
