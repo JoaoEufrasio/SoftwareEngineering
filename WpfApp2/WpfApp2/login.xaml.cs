@@ -44,10 +44,8 @@ namespace WpfApp2
 
             try
             {
-
-                string query = "SELECT username FROM staff WHERE username=" + user + "AND password=" + pass;
-
-
+                string query = "SELECT username FROM staff WHERE username='" + user + "'and password='" + pass + "'";
+                
                 DBConnection connection = DBConnection.getDBConnectionInstance();
                 DataSet DataLogin = connection.getDataSet(query);
 
@@ -72,7 +70,6 @@ namespace WpfApp2
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }
 
