@@ -21,17 +21,17 @@
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="10,86,0,0" TextWrapping="Wrap" Text="Surname" VerticalAlignment="Top"/>
         <TextBox x:Name="Surname" HorizontalAlignment="Left" Height="23" Margin="10,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="10,139,0,0" TextWrapping="Wrap" Text="Date of birth" VerticalAlignment="Top" Width="84" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox x:Name="Date_of_birth" HorizontalAlignment="Left" Height="23" Margin="10,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Date_of_birth" HorizontalAlignment="Left" Height="23" Margin="10,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Date_of_birth_TextChanged"/>
         <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="10,195,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top"/>
         <TextBox x:Name="Address_street" HorizontalAlignment="Left" Height="23" Margin="10,211,0,0" TextWrapping="Wrap" Text="(Street)" VerticalAlignment="Top" Width="120" TextChanged="textBox3_TextChanged"/>
         <TextBox x:Name="Address_city" HorizontalAlignment="Left" Height="23" Margin="10,239,0,0" TextWrapping="Wrap" Text="(City)" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="Address_postcode" HorizontalAlignment="Left" Height="23" Margin="10,267,0,0" TextWrapping="Wrap" Text="(Postcode)" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Phone" HorizontalAlignment="Left" Height="23" Margin="259,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Phone_emergency" HorizontalAlignment="Left" Height="23" Margin="259,76,0,0" TextWrapping="Wrap" Text="(Emergency contact)" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="259,109,0,0" TextWrapping="Wrap" Text="E-mail" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Mail" HorizontalAlignment="Left" Height="23" Margin="259,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Margin="259,32,0,0" TextWrapping="Wrap" Text="Phone number" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="Registerbt" Content="Register" HorizontalAlignment="Left" Margin="259,275,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <TextBox x:Name="Phone" HorizontalAlignment="Left" Height="23" Margin="256,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Phone_emergency" HorizontalAlignment="Left" Height="23" Margin="256,76,0,0" TextWrapping="Wrap" Text="(Emergency contact)" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="256,109,0,0" TextWrapping="Wrap" Text="E-mail" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Mail" HorizontalAlignment="Left" Height="23" Margin="256,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Margin="256,32,0,0" TextWrapping="Wrap" Text="Phone number" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Registerbt" Content="Register" HorizontalAlignment="Left" Margin="260,275,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
         <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Register new patient" VerticalAlignment="Top" Width="135" Margin="10,0,0,0"/>
 
     </Grid>

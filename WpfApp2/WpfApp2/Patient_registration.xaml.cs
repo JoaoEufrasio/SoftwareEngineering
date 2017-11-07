@@ -33,13 +33,14 @@ namespace WpfApp2
                 && Phone.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && Phone_emergency.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
             {
                 string sqlQuery;
-                sqlQuery = @"INSERT INTO 'Patients' ('Patient ID', 'Patient surname', 'Patient date of birth', 'Patient street', 
-                        'Patient city', 'Patient postcode', 'Patient phone number', 'Emergency contact', 'Patient email') VALUES 
-                        (NULL, '" + Name.Text + "', '" + Surname.Text + "', '" + Date_of_birth.Text + "', '" + Address_street.Text + "', '"
-                            + Address_city.Text + "', '" + Address_postcode.Text + "', '" + Phone.Text + "', '" + Phone_emergency.Text + "', '"
-                            + Mail.Text + "')";
+                sqlQuery = @"INSERT INTO Patients (Patient_name, Patient_surname, Patient_date_of_birth, Patient_street, Patient_city, Patient_postcode, Patient_phone_number, Emergency_contact, Patient_email) VALUES ('" + Name.Text + "', '" + Surname.Text + "', '" + Date_of_birth.Text + "', '" + Address_street.Text + "', '" + Address_city.Text + "', '" + Address_postcode.Text + "', '" + Phone.Text + "', '" + Phone_emergency.Text + "', '" + Mail.Text + "');";
                 DBConnection connection = DBConnection.getDBConnectionInstance();
                 connection.register(sqlQuery);
+                MessageBox.Show("Patient registered.");
+            }
+            else
+            {
+                MessageBox.Show("Some or all of the data fields have invalid content. Please check the data entered.");
             }
         }
 
@@ -49,6 +50,11 @@ namespace WpfApp2
         }
 
         private void textBox3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Date_of_birth_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
