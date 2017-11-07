@@ -1,0 +1,17 @@
+﻿<Window x:Name="login_screen" x:Class="WpfApp2.login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="230.252" Width="347.059">
+    <Grid>
+        <Button x:Name="btLogin" Content="Login" HorizontalAlignment="Left" Margin="240,153,0,0" VerticalAlignment="Top" Width="75" Click="btLogin_click" FontFamily="Tahoma" FontSize="13.333"/>
+        <Label x:Name="userlabel" Content="Username:" HorizontalAlignment="Left" Margin="25,41,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="13.333" Height="30"/>
+        <Label x:Name="passlabel" Content="Password:" HorizontalAlignment="Left" Margin="29,85,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="13.333"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="22" Margin="104,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="104,88,0,0" VerticalAlignment="Top" Width="113" Height="22"/>
+    </Grid>
+</Window>
+
