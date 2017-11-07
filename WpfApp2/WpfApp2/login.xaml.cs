@@ -26,7 +26,7 @@ namespace WpfApp2
             InitializeComponent();
         }
 
-        private void btLogin_Click(object sender, RoutedEventArgs e)
+        private void btLogin_click(object sender, RoutedEventArgs e)
         {
             //variables for username and password input
             string user, pass;
@@ -77,9 +77,7 @@ namespace WpfApp2
 }
 
 
-        private void btExit_click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-    }
-}
+      
+        
+    
+
