@@ -73,6 +73,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Booking.cs" />
     <Compile Include="booking_screen.xaml.cs">
       <DependentUpon>booking_screen.xaml</DependentUpon>
     </Compile>
@@ -95,6 +96,7 @@
     <Compile Include="Patient_registration.xaml.cs">
       <DependentUpon>Patient_registration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SQL_queries.cs" />
     <Compile Include="staff_individual.xaml.cs">
       <DependentUpon>staff_individual.xaml</DependentUpon>
     </Compile>

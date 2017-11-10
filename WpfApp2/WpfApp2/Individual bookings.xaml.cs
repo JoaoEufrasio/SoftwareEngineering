@@ -18,7 +18,9 @@ namespace WpfApp2
     /// <summary>
     /// Interaction logic for Individual_bookings.xaml
     /// </summary>
-    public partial class Individual_bookings : Window
+    public partial class Individual_bookings : Window 
+      
+
     {
         public Individual_bookings()
         {
