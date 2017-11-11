@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="main_screen" Height="350" Width="520">
     <Grid>
-        <Button x:Name="bt_bookings" Content="Booking" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37"/>
-        <Button x:Name="bt_patients" Content="Patients" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37"/>
-        <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand"/>
-        <Button x:Name="bt_register_patient" Content="Register Patient" HorizontalAlignment="Left" Margin="384,91,0,0" VerticalAlignment="Top" Width="100" Height="50"/>
+        <Button x:Name="bt_bookings" Content="Booking" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37" Click="bt_bookings_Click"/>
+        <Button x:Name="bt_patients" Content="Patients" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37" Click="bt_patients_Click"/>
+        <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_staff_Click"/>
+        <Button x:Name="bt_register_patient" Content="Register Patient" HorizontalAlignment="Left" Margin="384,91,0,0" VerticalAlignment="Top" Width="100" Height="50" Click="bt_register_patient_Click"/>
         <Button x:Name="bt_new_booking" Content="New Booking" HorizontalAlignment="Left" Margin="265,91,0,0" VerticalAlignment="Top" Width="100" Cursor="Hand" Height="50"/>
         <TextBox x:Name="search_patient" HorizontalAlignment="Left" Height="24" Margin="402,179,0,0" TextWrapping="Wrap" Text="Search Patient" VerticalAlignment="Top" Width="89" Cursor="IBeam"/>
         <TextBox x:Name="search_booking" HorizontalAlignment="Left" Height="24" Margin="276,179,0,0" TextWrapping="Wrap" Text="Search Booking" VerticalAlignment="Top" Width="89" Cursor="IBeam"/>

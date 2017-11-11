@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -34,6 +35,24 @@ namespace WpfApp2
             System.Windows.Forms.MessageBox.Show("Are you sure want to cancel booking", "Cancel Booking",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
 
+        }
+
+        private void bt_home_Click(object sender, RoutedEventArgs e)
+        {
+            main_screen frm = new main_screen();
+            frm.Show();
+        }
+
+        private void bt_booking_Click(object sender, RoutedEventArgs e)
+        {
+            booking_screen frm = new booking_screen();
+            frm.Show();
+        }
+
+        private void bt_staff_Click(object sender, RoutedEventArgs e)
+        {
+            staff_menu frm = new staff_menu();
+            frm.Show();
         }
     }
 }

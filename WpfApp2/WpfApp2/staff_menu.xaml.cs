@@ -18,20 +18,23 @@ namespace WpfApp2
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class staff_menu : Window
     {
-        public MainWindow()
+        public staff_menu()
         {
             InitializeComponent();
         }
 
         private void btn_bookings_Click(object sender, RoutedEventArgs e)
         {
-
+            booking_screen frm = new booking_screen();
+            frm.Show();
         }
 
         private void btn_patients_Click(object sender, RoutedEventArgs e)
         {
+            Patients frm = new Patients();
+            frm.Show();
 
         }
 
@@ -53,6 +56,12 @@ namespace WpfApp2
         private void staff_name_id_shift_Selected(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            main_screen frm = new main_screen();
+            frm.Show();
         }
     }
 }

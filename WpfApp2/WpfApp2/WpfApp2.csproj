@@ -74,6 +74,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Booking.cs" />
+    <Compile Include="Booking_new.xaml.cs">
+      <DependentUpon>Booking_new.xaml</DependentUpon>
+    </Compile>
     <Compile Include="booking_screen.xaml.cs">
       <DependentUpon>booking_screen.xaml</DependentUpon>
     </Compile>
@@ -100,6 +103,10 @@
     <Compile Include="staff_individual.xaml.cs">
       <DependentUpon>staff_individual.xaml</DependentUpon>
     </Compile>
+    <Page Include="Booking_new.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="booking_screen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

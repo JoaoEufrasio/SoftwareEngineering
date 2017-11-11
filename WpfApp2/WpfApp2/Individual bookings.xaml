@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="Individual Bookings" Height="350" Width="520">
     <Grid>
-        <Button x:Name="bt_home" Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37"/>
-        <Button x:Name="bt_patients" Content="Patients" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Height="37"/>
-        <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand"/>
+        <Button x:Name="bt_home" Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37" Click="bt_home_Click"/>
+        <Button x:Name="bt_patients" Content="Patients" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Click="bt_patients_Click"/>
+        <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_staff_Click"/>
         <Image HorizontalAlignment="Left" Height="24" Margin="10,42,0,0" VerticalAlignment="Top" Width="26" Source="back_icon.ico"/>
         <Button x:Name="bt_cancel_booking" Content="Cancel Booking" HorizontalAlignment="Left" Margin="313,91,0,0" VerticalAlignment="Top" Width="179" Height="50" Cursor="Hand" Click="bt_cancel_booking_Click"/>
         <Button x:Name="bt_save_changes" Content="Save Changes" HorizontalAlignment="Left" Margin="313,195,0,0" VerticalAlignment="Top" Width="179" Height="50" Click="bt_save_changes_Click"/>

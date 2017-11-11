@@ -17,17 +17,16 @@ namespace WpfApp2
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class staff_individual : Window
     {
-        public Window1()
+        public staff_individual()
         {
             InitializeComponent();
         }
 
         private void bt_bookings_Click(object sender, RoutedEventArgs e)
         {
-            booking_screen frm = new booking_screen();
-            frm.Show();
+            
         }
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -56,6 +55,12 @@ namespace WpfApp2
            main_screen frm = new main_screen();
             frm.Show();
 
+        }
+
+        private void btn_ookings_Click(object sender, RoutedEventArgs e)
+        {
+            booking_screen frm = new booking_screen();
+            frm.Show();
         }
     }
 }

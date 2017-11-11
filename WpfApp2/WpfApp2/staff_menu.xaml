@@ -1,4 +1,4 @@
-﻿<Window x:Name="Staff_Screen" x:Class="WpfApp2.MainWindow"
+﻿<Window x:Name="Staff_Screen" x:Class="WpfApp2.staff_menu"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -12,7 +12,7 @@
         </Grid.ColumnDefinitions>
         <Button x:Name="btn_bookings" Content="Bookings" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Cursor="Hand" RenderTransformOrigin="-0.007,-0.762" Click="btn_bookings_Click" Height="37" ClickMode="Press"/>
         <Button x:Name="btn_patients" Content="Patients" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Height="37" ClickMode="Press" Click="btn_patients_Click" Cursor="Hand"/>
-        <Button x:Name="btn_home" Content="Home" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37"/>
+        <Button x:Name="btn_home" Content="Home" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Click="btn_home_Click"/>
         <Calendar HorizontalAlignment="Left" Margin="313,121,0,0" VerticalAlignment="Top" Width="179" Height="168"/>
         <TextBox x:Name="search_bar" HorizontalAlignment="Left" Height="24" Margin="369,75,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="110" AutomationProperties.Name="Search" Cursor="IBeam">
             <TextBox.Background>

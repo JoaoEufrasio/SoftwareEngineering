@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="Individual Patient" Height="350" Width="520">
     <Grid>
-        <Button x:Name="bt_home" Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand"/>
-        <Button x:Name="bt_booking" Content="Bookings" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand"/>
-        <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand"/>
+        <Button x:Name="bt_home" Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_home_Click"/>
+        <Button x:Name="bt_booking" Content="Bookings" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_booking_Click"/>
+        <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_staff_Click"/>
         <Button x:Name="bt_test" Content="Tests" HorizontalAlignment="Left" Margin="369,63,0,0" VerticalAlignment="Top" Width="110" Cursor="Hand" Height="24"/>
         <Button x:Name="bt_patient_record" Content="Patient Record" HorizontalAlignment="Left" Margin="262,63,0,0" VerticalAlignment="Top" Width="110" Height="24"/>
         <ListView x:Name="prescriptions_list" HorizontalAlignment="Left" Height="161" Margin="340,115,0,0" VerticalAlignment="Top" Width="157">
