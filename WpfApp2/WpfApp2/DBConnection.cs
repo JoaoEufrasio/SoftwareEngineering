@@ -42,7 +42,7 @@ namespace WpfApp2
         public void openConnection()
         {
             
-            ConnectionStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=K:\SoftwareEngineering-master\WpfApp2\WpfApp2\Database1.mdf;Integrated Security=True";
+            ConnectionStr = @"";
             // create the connection to the database as an instance of SqlConnection
             connectionToDB = new SqlConnection(connectionString);
 
@@ -76,14 +76,26 @@ namespace WpfApp2
             return dataSet;
         }
 
-        //create a patient record in the database
-        public void register(string sqlQuery)
+        //create a patient record in the database. Data from the user is inserted into the query here as parameters, rather than directly on the front-end
+        public void register(string sqlQuery, string name, string surname, string date_of_birth, string street, string city, string postcode, string phone, string emergency_phone, string email)
         {
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.Text;
             command.CommandText = sqlQuery;
+            //inserts the data in the query
+            command.Parameters.Add(new SqlParameter("Name", name));
+            command.Parameters.Add(new SqlParameter("Surname", surname));
+            command.Parameters.Add(new SqlParameter("Date_of_birth", date_of_birth));
+            command.Parameters.Add(new SqlParameter("Street", street));
+            command.Parameters.Add(new SqlParameter("City", city));
+            command.Parameters.Add(new SqlParameter("Postcode", postcode));
+            command.Parameters.Add(new SqlParameter("Phone", phone));
+            command.Parameters.Add(new SqlParameter("Emergency_phone", emergency_phone));
+            command.Parameters.Add(new SqlParameter("Email", email));
+            //open the connection
             openConnection();
             command.Connection = connectionToDB;
+            //executes the query and closes the connection
             command.ExecuteNonQuery();
             closeConnection();
         }

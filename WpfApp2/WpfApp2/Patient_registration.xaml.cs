@@ -27,15 +27,19 @@ namespace WpfApp2
         private void button_Click(object sender, RoutedEventArgs e)
         {
             //code taken from https://stackoverflow.com/questions/4503542/check-for-special-characters-in-a-string
+            //makes sure the characters in text boxes are letters, digits or spaces
             if (Name.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && Surname.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c))
                 && Date_of_birth.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c) || c == '/') && Address_street.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c))
                 && Address_city.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && Address_postcode.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c))
                 && Phone.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && Phone_emergency.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
             {
+                //creates the query
                 string sqlQuery;
-                sqlQuery = @"INSERT INTO Patients (Patient_name, Patient_surname, Patient_date_of_birth, Patient_street, Patient_city, Patient_postcode, Patient_phone_number, Emergency_contact, Patient_email) VALUES ('" + Name.Text + "', '" + Surname.Text + "', '" + Date_of_birth.Text + "', '" + Address_street.Text + "', '" + Address_city.Text + "', '" + Address_postcode.Text + "', '" + Phone.Text + "', '" + Phone_emergency.Text + "', '" + Mail.Text + "');";
+                //creates the query with parameters instead of data from the user. That data will be inserted in the query later, in the back-end
+                sqlQuery = @"INSERT INTO Patients (Patient_name, Patient_surname, Patient_date_of_birth, Patient_street, Patient_city, Patient_postcode, Patient_phone_number, Emergency_contact, Patient_email) VALUES (@Name, @Surname, @Date_of_birth, @Street, @City, @Postcode, @Phone, @Emergency_phone, @Email);";
                 DBConnection connection = DBConnection.getDBConnectionInstance();
-                connection.register(sqlQuery);
+                //calls the registration method with all the data passed as parameters
+                connection.register(sqlQuery, Name.Text, Surname.Text, Date_of_birth.Text, Address_street.Text, Address_city.Text, Address_postcode.Text, Phone.Text, Phone_emergency.Text, Mail.Text);
                 MessageBox.Show("Patient registered.");
             }
             else
