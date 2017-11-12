@@ -100,6 +100,27 @@ namespace WpfApp2
             closeConnection();
         }
 
+        //create a new booking
+        public void book(string sqlQuery, string patientID, string doctorID, string date, string time, string room, string description)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlQuery;
+            //inserts the data in the query
+            command.Parameters.Add(new SqlParameter("PatientID", patientID));
+            command.Parameters.Add(new SqlParameter("DoctorID", doctorID));
+            command.Parameters.Add(new SqlParameter("Date", date));
+            command.Parameters.Add(new SqlParameter("Time", time));
+            command.Parameters.Add(new SqlParameter("Room", room));
+            command.Parameters.Add(new SqlParameter("Description", description));
+            //open the connection
+            openConnection();
+            command.Connection = connectionToDB;
+            //executes the query and closes the connection
+            command.ExecuteNonQuery();
+            closeConnection();
+        }
+
 
         /*
         * Insert the name and age into the DB
