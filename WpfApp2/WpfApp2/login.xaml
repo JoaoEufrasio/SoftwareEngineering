@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="Login" Height="350" Width="520">
+        Title="Login" Height="195" Width="520">
     <Grid>
-        <Label x:Name="login_ID" Content="Login ID:" HorizontalAlignment="Left" Margin="102,118,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
-        <Label x:Name="password" Content="Password:" HorizontalAlignment="Left" Margin="91,149,0,0" VerticalAlignment="Top" Height="26" Width="68" HorizontalContentAlignment="Right"/>
-        <TextBox x:Name="login_input" HorizontalAlignment="Left" Height="23" Margin="179,122,0,0" TextWrapping="Wrap" Text="Enter Login ID" VerticalAlignment="Top" Width="120" Cursor="IBeam"/>
-        <TextBox x:Name="password_input" HorizontalAlignment="Left" Height="23" Margin="179,152,0,0" TextWrapping="Wrap" Text="Enter Password" VerticalAlignment="Top" Width="120" Cursor="IBeam"/>
-        <Button x:Name="bt_login" Content="Login" HorizontalAlignment="Left" Margin="179,198,0,0" VerticalAlignment="Top" Width="120" Height="21" Click="bt_login_Click"/>
+        <Label x:Name="login_ID" Content="Login ID:" HorizontalAlignment="Left" Margin="72,54,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+        <Label x:Name="password" Content="Password:" HorizontalAlignment="Left" Margin="61,102,0,0" VerticalAlignment="Top" Height="26" Width="68" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="149,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Cursor="IBeam"/>
+        <Button x:Name="bt_login" Content="Login" HorizontalAlignment="Left" Margin="338,87,0,0" VerticalAlignment="Top" Width="120" Height="21" Click="bt_login_Click"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="149,110,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
