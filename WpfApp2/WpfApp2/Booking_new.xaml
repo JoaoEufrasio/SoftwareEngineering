@@ -7,19 +7,17 @@
         mc:Ignorable="d"
         Title="Booking_new" Height="429" Width="397">
     <Grid>
-        <TextBox x:Name="txt_patient_name" HorizontalAlignment="Left" Height="23" Margin="10,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
-        <Label x:Name="lb_patient_name" Content="Patient Name" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="87"/>
-        <TextBox x:Name="txt_doctor" HorizontalAlignment="Left" Height="23" Margin="10,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
-        <Label x:Name="lb_doctor" Content="Doctor" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top" Width="87"/>
-        <Label x:Name="lb_date" Content="Date" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" Width="64"/>
-        <TextBox x:Name="txt_date" HorizontalAlignment="Left" Height="23" Margin="10,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="Doctor" HorizontalAlignment="Left" Height="23" Margin="10,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+        <Label x:Name="lb_doctor" Content="Doctor ID" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="87"/>
+        <Label x:Name="lb_date" Content="Date" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="64"/>
+        <TextBox x:Name="Date" HorizontalAlignment="Left" Height="23" Margin="10,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
         <Label x:Name="lb_time" Content="Time" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_time" HorizontalAlignment="Left" Height="22" Margin="10,284,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
-        <TextBox x:Name="txt_patient_id" HorizontalAlignment="Left" Height="24" Margin="10,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="Time" HorizontalAlignment="Left" Height="22" Margin="10,284,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="ID" HorizontalAlignment="Left" Height="24" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
         <Label x:Name="lb_patient_id" Content="Patient ID" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Width="64"/>
         <Label x:Name="lb_room" Content="Room" HorizontalAlignment="Left" Margin="240,11,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_room" HorizontalAlignment="Left" Height="23" Margin="240,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txt_description" HorizontalAlignment="Left" Height="164" Margin="240,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Room" HorizontalAlignment="Left" Height="23" Margin="240,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Description" HorizontalAlignment="Left" Height="164" Margin="240,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lb_description" Content="Description" HorizontalAlignment="Left" Margin="240,69,0,0" VerticalAlignment="Top" Width="94"/>
         <Button x:Name="bt_confirm_booking" Content="Add Booking" HorizontalAlignment="Left" Margin="240,286,0,0" VerticalAlignment="Top" Width="120" Click="bt_confirm_booking_Click"/>
 
