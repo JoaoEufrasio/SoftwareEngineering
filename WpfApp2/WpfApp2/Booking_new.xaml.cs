@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -22,6 +23,12 @@ namespace WpfApp2
         public Booking_new()
         {
             InitializeComponent();
+        }
+
+        private void bt_confirm_booking_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.MessageBox.Show("Are you sure want to save this booking", "Save Booking",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
     }
 }
