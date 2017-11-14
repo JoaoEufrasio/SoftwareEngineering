@@ -22,7 +22,7 @@
         <Label x:Name="lb_doctor" Content="Doctor:" HorizontalAlignment="Left" Margin="40,206,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lb_room" Content="Room:" HorizontalAlignment="Left" Margin="46,230,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lb_description" Content="Description:" HorizontalAlignment="Left" Margin="17,255,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tb_patient_id" HorizontalAlignment="Left" Height="23" Margin="95,119,0,0" TextWrapping="Wrap" Text="Patinent ID" VerticalAlignment="Top" Width="180" TextChanged="tb_patient_id_TextChanged">
+        <TextBox x:Name="ID" HorizontalAlignment="Left" Height="23" Margin="95,119,0,0" TextWrapping="Wrap" Text="Patinent ID" VerticalAlignment="Top" Width="180" TextChanged="tb_patient_id_TextChanged">
             <TextBox.DataContext>
                 <local:DBConnection/>
             </TextBox.DataContext>
@@ -32,11 +32,11 @@
                 <local:DBConnection/>
             </TextBox.DataContext>
         </TextBox>
-        <TextBox x:Name="tb_date" HorizontalAlignment="Left" Height="23" Margin="95,165,0,0" TextWrapping="Wrap" Text="Date" VerticalAlignment="Top" Width="180"/>
-        <TextBox x:Name="tb_time" HorizontalAlignment="Left" Height="23" Margin="95,188,0,0" TextWrapping="Wrap" Text="Time" VerticalAlignment="Top" Width="180"/>
-        <TextBox x:Name="tb_doctor" HorizontalAlignment="Left" Height="23" Margin="95,211,0,0" TextWrapping="Wrap" Text="Doctor" VerticalAlignment="Top" Width="180"/>
-        <TextBox x:Name="tb_room" HorizontalAlignment="Left" Height="23" Margin="95,234,0,0" TextWrapping="Wrap" Text="Room" VerticalAlignment="Top" Width="180"/>
-        <TextBox x:Name="tb_description" HorizontalAlignment="Left" Height="55" Margin="95,257,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Width="180"/>
+        <TextBox x:Name="Date" HorizontalAlignment="Left" Height="23" Margin="95,165,0,0" TextWrapping="Wrap" Text="Date" VerticalAlignment="Top" Width="180"/>
+        <TextBox x:Name="Time" HorizontalAlignment="Left" Height="23" Margin="95,188,0,0" TextWrapping="Wrap" Text="Time" VerticalAlignment="Top" Width="180"/>
+        <TextBox x:Name="Doctor" HorizontalAlignment="Left" Height="23" Margin="95,211,0,0" TextWrapping="Wrap" Text="Doctor" VerticalAlignment="Top" Width="180"/>
+        <TextBox x:Name="Room" HorizontalAlignment="Left" Height="23" Margin="95,234,0,0" TextWrapping="Wrap" Text="Room" VerticalAlignment="Top" Width="180"/>
+        <TextBox x:Name="Description" HorizontalAlignment="Left" Height="55" Margin="95,255,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Width="180"/>
 
     </Grid>
 </Window>

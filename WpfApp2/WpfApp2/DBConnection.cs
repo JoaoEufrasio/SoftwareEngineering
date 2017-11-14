@@ -122,6 +122,8 @@ namespace WpfApp2
         }
 
 
+
+
         /*
         * Insert the name and age into the DB
         */
