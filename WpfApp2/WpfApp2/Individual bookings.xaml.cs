@@ -25,6 +25,8 @@ namespace WpfApp2
         public Individual_bookings()
         {
             InitializeComponent();
+
+            Booking.RegisterNewBooking();
         }
 
         private void bt_cancel_booking_Click(object sender, RoutedEventArgs e)
@@ -68,5 +70,8 @@ namespace WpfApp2
             staff_menu frm = new staff_menu();
             frm.Show();
         }
+
+        //Name of the class your method is in dot and the name of your method 
+        
     }
 }
