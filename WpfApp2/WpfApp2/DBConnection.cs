@@ -143,5 +143,25 @@ namespace WpfApp2
             Console.WriteLine("n-" + noRows);
         }
 
+        public void deleteBooking(string sqlQuery, int bookingID)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlQuery;
+
+            //inserts the data in the query
+            command.Parameters.Add(new SqlParameter("Booking_ID", bookingID));
+
+            //open the connection
+            openConnection();
+            command.Connection = connectionToDB;
+
+            //executes the query and closes the connection
+            command.ExecuteNonQuery();
+            closeConnection();
+
+
+
+        }
     }
 }
