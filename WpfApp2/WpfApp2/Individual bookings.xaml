@@ -13,8 +13,8 @@
         <Image HorizontalAlignment="Left" Height="24" Margin="10,42,0,0" VerticalAlignment="Top" Width="26" Source="back_icon.ico"/>
         <Button x:Name="bt_cancel_booking" Content="Cancel Booking" HorizontalAlignment="Left" Margin="313,91,0,0" VerticalAlignment="Top" Width="179" Height="50" Cursor="Hand" Click="bt_cancel_booking_Click"/>
         <Button x:Name="bt_save_changes" Content="Save Changes" HorizontalAlignment="Left" Margin="313,195,0,0" VerticalAlignment="Top" Width="179" Height="50" Click="bt_save_changes_Click"/>
-        <Label x:Name="booking_details_view" Content="Booking Details" HorizontalAlignment="Left" Margin="28,78,0,0" VerticalAlignment="Top" Height="29" Width="113"/>
-        <Image x:Name="edit_bookings" HorizontalAlignment="Left" Height="24" Margin="159,78,0,0" VerticalAlignment="Top" Width="26" Source="edit_button.png"/>
+        <Label x:Name="booking_details_view" Content="Booking Details" HorizontalAlignment="Left" Margin="28,50,0,0" VerticalAlignment="Top" Height="29" Width="113"/>
+        <Image x:Name="edit_bookings" HorizontalAlignment="Left" Height="24" Margin="159,50,0,0" VerticalAlignment="Top" Width="26" Source="edit_button.png"/>
         <Label x:Name="lb_patient_id" Content="Patient ID:" HorizontalAlignment="Left" Margin="26,115,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lb_patient_name" Content="Name:" HorizontalAlignment="Left" Margin="45,138,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lb_date" Content="Date:" HorizontalAlignment="Left" Margin="52,160,0,0" VerticalAlignment="Top"/>
@@ -22,7 +22,7 @@
         <Label x:Name="lb_doctor" Content="Doctor:" HorizontalAlignment="Left" Margin="40,206,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lb_room" Content="Room:" HorizontalAlignment="Left" Margin="46,230,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lb_description" Content="Description:" HorizontalAlignment="Left" Margin="17,255,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="ID" HorizontalAlignment="Left" Height="23" Margin="95,119,0,0" TextWrapping="Wrap" Text="Patinent ID" VerticalAlignment="Top" Width="180" TextChanged="tb_patient_id_TextChanged">
+        <TextBox x:Name="ID" HorizontalAlignment="Left" Height="23" Margin="95,119,0,0" TextWrapping="Wrap" Text="Patient ID" VerticalAlignment="Top" Width="180" TextChanged="tb_patient_id_TextChanged">
             <TextBox.DataContext>
                 <local:DBConnection/>
             </TextBox.DataContext>
@@ -37,6 +37,12 @@
         <TextBox x:Name="Doctor" HorizontalAlignment="Left" Height="23" Margin="95,211,0,0" TextWrapping="Wrap" Text="Doctor" VerticalAlignment="Top" Width="180"/>
         <TextBox x:Name="Room" HorizontalAlignment="Left" Height="23" Margin="95,234,0,0" TextWrapping="Wrap" Text="Room" VerticalAlignment="Top" Width="180"/>
         <TextBox x:Name="Description" HorizontalAlignment="Left" Height="55" Margin="95,255,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Width="180"/>
+        <TextBox x:Name="Booking_ID" HorizontalAlignment="Left" Height="23" Margin="95,96,0,0" TextWrapping="Wrap" Text="Booking ID" VerticalAlignment="Top" Width="180" TextChanged="tb_patient_id_TextChanged">
+            <TextBox.DataContext>
+                <local:DBConnection/>
+            </TextBox.DataContext>
+        </TextBox>
+        <Label x:Name="lb_patient_id_Copy" Content="Booking ID" HorizontalAlignment="Left" Margin="26,96,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

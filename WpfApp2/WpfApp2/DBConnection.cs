@@ -145,7 +145,7 @@ namespace WpfApp2
             Console.WriteLine("n-" + noRows);
         }
 
-        public void deleteBooking(string sqlQuery, int bookingID)
+        public void deleteBooking(string sqlQuery, string bookingID)
         {
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.Text;
