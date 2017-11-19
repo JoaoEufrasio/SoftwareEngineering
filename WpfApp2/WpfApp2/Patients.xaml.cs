@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -32,6 +33,42 @@ namespace WpfApp2
         private void bt_booking_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (SearchBox.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
+            {
+                //stores what's in the Searchbox in a variable
+                string id = SearchBox.Text;
+                //creates the SQL query
+                string query = @"SELECT * FROM Patients WHERE Patient_Id = '" + id + "';";
+
+                DBConnection connection = DBConnection.getDBConnectionInstance();
+                DataSet patientData = connection.getDataSet(query);
+                //checks that the query returned exactly one result
+                int count = patientData.Tables[0].Rows.Count;
+
+
+                if (count == 1)
+                {
+                    individual_patient patient = new individual_patient(id, patientData);
+                    patient.Show();
+                }
+                else
+                {
+                    MessageBox.Show("No patient found.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No patient found.");
+            }
         }
     }
 }

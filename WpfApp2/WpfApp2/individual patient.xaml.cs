@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,8 +21,12 @@ namespace WpfApp2
     /// </summary>
     public partial class individual_patient : Window
     {
-        public individual_patient()
+        string patientId;
+        DataSet patientData;
+        public individual_patient(string id, DataSet data)
         {
+            patientId = id;
+            patientData = data;
             InitializeComponent();
         }
 
@@ -53,6 +58,12 @@ namespace WpfApp2
         {
             staff_menu frm = new staff_menu();
             frm.Show();
+        }
+
+        private void bt_patient_record_Click(object sender, RoutedEventArgs e)
+        {
+            Patient_record record = new Patient_record(patientId, patientData);
+            record.Show();
         }
     }
 }

@@ -69,6 +69,7 @@ namespace WpfApp2
 
             //fill in the data set
             dataAdapter.Fill(dataSet);
+            
 
             //close connection
             closeConnection();
@@ -92,6 +93,31 @@ namespace WpfApp2
             command.Parameters.Add(new SqlParameter("Phone", phone));
             command.Parameters.Add(new SqlParameter("Emergency_phone", emergency_phone));
             command.Parameters.Add(new SqlParameter("Email", email));
+            //open the connection
+            openConnection();
+            command.Connection = connectionToDB;
+            //executes the query and closes the connection
+            command.ExecuteNonQuery();
+            closeConnection();
+        }
+
+        //update a patient record in the database
+        public void updatePatient(string sqlQuery, string name, string surname, string date_of_birth, string street, string city, string postcode, string phone, string emergency_phone, string email, string id)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlQuery;
+            //inserts the data in the query
+            command.Parameters.Add(new SqlParameter("Name", name));
+            command.Parameters.Add(new SqlParameter("Surname", surname));
+            command.Parameters.Add(new SqlParameter("Date_of_birth", date_of_birth));
+            command.Parameters.Add(new SqlParameter("Street", street));
+            command.Parameters.Add(new SqlParameter("City", city));
+            command.Parameters.Add(new SqlParameter("Postcode", postcode));
+            command.Parameters.Add(new SqlParameter("Phone", phone));
+            command.Parameters.Add(new SqlParameter("Emergency_phone", emergency_phone));
+            command.Parameters.Add(new SqlParameter("Email", email));
+            command.Parameters.Add(new SqlParameter("PatientID", id));
             //open the connection
             openConnection();
             command.Connection = connectionToDB;
