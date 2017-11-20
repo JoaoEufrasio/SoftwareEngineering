@@ -25,9 +25,11 @@ namespace WpfApp2
 
         public Patient_record(string patientID, DataSet data)
         {
+            //the constructor gets passed the ID of the patient this information belongs to and the actual dataset
             id = patientID;
             patientData = data;
             InitializeComponent();
+            //the data from the database is put into the corresponding text boxes (or blocks)
             Name.Text = patientData.Tables[0].Rows[0].Field<string>("Patient_name");
             Surname.Text = patientData.Tables[0].Rows[0].Field<string>("Patient_surname");
             Date_of_birth.Text = patientData.Tables[0].Rows[0].Field<DateTime>("Patient_date_of_birth").ToString();

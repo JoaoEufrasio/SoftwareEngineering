@@ -21,6 +21,7 @@ namespace WpfApp2
     /// </summary>
     public partial class individual_patient : Window
     {
+        //the constructor gets passed the ID of the patient this information belongs to and the actual dataset
         string patientId;
         DataSet patientData;
         public individual_patient(string id, DataSet data)
