@@ -32,12 +32,7 @@ namespace WpfApp2
                 && Doctor.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && Date.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c))
                 && Time.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && Room.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
             {
-                //creates the query
-                string sqlQuery;
-                //creates the query with parameters instead of data from the user. That data will be inserted in the query later, in the back-end
-                sqlQuery = @"INSERT INTO Bookings (Patient_ID, Staff_ID, Booking_Date, Time, Room, Description) VALUES (@PatientID, @DoctorID, @Date, @Time, @Room @Description);";
-                DBConnection connection = DBConnection.getDBConnectionInstance();
-                connection.book(sqlQuery, ID.Text, Doctor.Text, Date.Text, Time.Text, Room.Text, Description.Text);
+                Booking.createBooking(ID.Text, Doctor.Text, Date.Text, Time.Text, Room.Text, Description.Text);
                 MessageBox.Show("Booking created.");
             }
             else

@@ -26,15 +26,21 @@ namespace WpfApp2
         {
             InitializeComponent();
 
-            Booking.RegisterNewBooking();
+            Booking.viewBooking();
         }
 
         private void bt_cancel_booking_Click(object sender, RoutedEventArgs e)
         {
-            // confirmation pop up message
-            System.Windows.Forms.MessageBox.Show("Are you sure want to cancel booking", "Cancel Booking",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
-
+            if (System.Windows.MessageBox.Show("Are you sure want to save changes", "Save Booking Changes",
+       MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                string sqlQuery;
+                //creates the query with parameters 
+                sqlQuery = @"DELETE FROM Bookings where Booking_Id =@Booking_ID;";
+                DBConnection connection = DBConnection.getDBConnectionInstance();
+                connection.deleteBooking(sqlQuery, Booking_ID.Text);
+                System.Windows.Forms.MessageBox.Show("Booking deleted.");
+            }
         }
 
         private void tb_name_TextChanged(object sender, TextChangedEventArgs e)
@@ -56,7 +62,7 @@ namespace WpfApp2
                     //creates the query
                     string sqlQuery;
                     //creates the query with parameters instead of data from the user. That data will be inserted in the query later, in the back-end
-                    sqlQuery = @"UPDATE Bookings SET Patient_Id = @PatientID, Staff_Id = @DoctorID, Booking_Date = @Date, Time = @Time, Room = @Room, Description = @Description WHERE Booking_Id = 7000";
+                    sqlQuery = @"UPDATE Bookings SET Patient_Id = @PatientID, Staff_Id = @DoctorID, Booking_Date = @Date, Time = @Time, Room = @Room, Description = @Description WHERE Booking_Id = 7002";
                     DBConnection connection = DBConnection.getDBConnectionInstance();
                     connection.book(sqlQuery, ID.Text, Doctor.Text, Date.Text, Time.Text, Room.Text, Description.Text);
                     System.Windows.MessageBox.Show("Booking updated.");
