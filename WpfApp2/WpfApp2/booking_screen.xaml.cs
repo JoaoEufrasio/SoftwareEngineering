@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,8 +20,17 @@ namespace WpfApp2
     /// </summary>
     public partial class booking_screen : Window
     {
+        string bookingId;
+        DataSet bookingData;
         public booking_screen()
+        {           
+            InitializeComponent();
+        }
+
+        public booking_screen(string id, DataSet data)
         {
+            bookingId = id;
+            bookingData = data;
             InitializeComponent();
         }
 
@@ -52,6 +62,37 @@ namespace WpfApp2
         {
             Booking_new frm = new Booking_new();
             frm.Show();
+        }
+
+        private void button_searchBooking(object sender, ContextMenuEventArgs e)
+        {
+            if (booking_search.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
+            {
+                //stores what's in the Searchbox in a variable
+                string id = booking_search.Text;
+                //creates the SQL query
+                string query = @"SELECT * FROM Bookings WHERE Booking_Id = '" + id + "';";
+
+                DBConnection connection = DBConnection.getDBConnectionInstance();
+                DataSet bookingData = connection.getDataSet(query);
+                //checks that the query returned exactly one result
+                int count = bookingData.Tables[0].Rows.Count;
+
+
+                if (count == 1)
+                {
+                    booking_screen booking = new booking_screen(id, bookingData);
+                    booking.Show();
+                }
+                else
+                {
+                    MessageBox.Show("No booking found.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No booking found.");
+            }
         }
     }
 }
