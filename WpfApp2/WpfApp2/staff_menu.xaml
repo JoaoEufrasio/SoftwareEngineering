@@ -14,25 +14,19 @@
         <Button x:Name="btn_patients" Content="Patients" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Height="37" ClickMode="Press" Click="btn_patients_Click" Cursor="Hand"/>
         <Button x:Name="btn_home" Content="Home" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Click="btn_home_Click"/>
         <Calendar HorizontalAlignment="Left" Margin="313,121,0,0" VerticalAlignment="Top" Width="179" Height="168"/>
-        <TextBox x:Name="search_bar" HorizontalAlignment="Left" Height="24" Margin="369,75,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="110" AutomationProperties.Name="Search" Cursor="IBeam">
+        <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Height="24" Margin="369,75,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="110" AutomationProperties.Name="Search" Cursor="IBeam">
             <TextBox.Background>
                 <ImageBrush/>
             </TextBox.Background>
         </TextBox>
-        <Image HorizontalAlignment="Left" Height="24" Margin="343,75,0,0" VerticalAlignment="Top" Width="26" Source="search_icon.PNG"/>
-        <ListView x:Name="staff_on_duty_list" HorizontalAlignment="Left" Height="161" Margin="28,121,0,0" VerticalAlignment="Top" Width="157" SelectionChanged="staff_on_duty_SelectionChanged" Cursor="Hand" AutomationProperties.Name="Staff on Duty (dd/mm/yy)">
-            <ListView.View>
-                <GridView ColumnHeaderStringFormat="">
-                    <GridView.ColumnHeaderContextMenu>
-                        <ContextMenu/>
-                    </GridView.ColumnHeaderContextMenu>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-            <ListBoxItem x:Name="staff_name_id_shift" Cursor="Arrow" Content="Name-ID-Shift" AutomationProperties.Name="Name-ID-Shift" Selected="staff_name_id_shift_Selected"/>
-            <ScrollBar x:Name="duty_list_scroller" Height="110" Width="10" HorizontalContentAlignment="Right" HorizontalAlignment="Right" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
-        </ListView>
         <Label x:Name="staff_on_duty_date" Content="Staff on Duty (dd/mm/yy)" HorizontalAlignment="Left" Margin="28,88,0,0" VerticalAlignment="Top" Height="28" Width="157"/>
+        <Button x:Name="StaffSearchbt" Height="24" Width="24" Margin="340,75,145,211.5" Click="Search_Staff">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="search_icon.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
     </Grid>
 </Window>

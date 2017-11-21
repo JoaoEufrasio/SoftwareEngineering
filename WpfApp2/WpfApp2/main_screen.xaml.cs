@@ -25,9 +25,11 @@ namespace WpfApp2
             InitializeComponent();
             string date = DateTime.Today.ToString("MM/dd/yyyy");
             date = date.Split(' ')[0];
-            string sqlQuery = @"SELECT Patients.Patient_ID, Patients.Patient_name, Patients.Patient_surname, Bookings.Booking_ID, Bookings.Time, Bookings.Room FROM Patients INNER JOIN Bookings ON Patients.Patient_ID = Bookings.Patient_ID WHERE Bookings.Booking_date = '" + date + "'";
+            string sqlQuery = @"SELECT Patients.Patient_ID, Patients.Patient_name, Patients.Patient_surname, Bookings.Booking_ID, Bookings.Booking_Date, Bookings.Time, Bookings.Room FROM Patients INNER JOIN Bookings ON Patients.Patient_ID = Bookings.Patient_ID WHERE Bookings.Booking_date = '" + date + "'";
             DBConnection connection = DBConnection.getDBConnectionInstance();
             DataSet todayPatients = connection.getDataSet(sqlQuery);
+            DataTable dt = todayPatients.Tables[0];
+            dataGrid.ItemsSource = dt.DefaultView;
             //int count = todayPatients.Tables[0].Rows.Count;
             
         }
@@ -35,19 +37,19 @@ namespace WpfApp2
         private void bt_bookings_Click(object sender, RoutedEventArgs e)
         {
             booking_screen frm = new booking_screen();
-            frm.Show();
+            this.Content = frm.Content;
         }
 
         private void bt_patients_Click(object sender, RoutedEventArgs e)
         {
             Patients frm = new Patients();
-            frm.Show();
+            this.Content = frm.Content;
         }
 
         private void bt_staff_Click(object sender, RoutedEventArgs e)
         {
             staff_menu frm = new staff_menu();
-            frm.Show();
+            this.Content = frm.Content;
         }
 
         private void bt_register_patient_Click(object sender, RoutedEventArgs e)
@@ -85,6 +87,11 @@ namespace WpfApp2
             {
                 MessageBox.Show("No patient found.");
             }
+        }
+
+        private void button_searchBooking(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -32,7 +32,8 @@ namespace WpfApp2
 
         private void bt_booking_Click(object sender, RoutedEventArgs e)
         {
-
+            booking_screen frm = new booking_screen();
+            this.Content = frm.Content;
         }
 
         private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -69,6 +70,18 @@ namespace WpfApp2
             {
                 MessageBox.Show("No patient found.");
             }
+        }
+
+        private void bt_home_Click(object sender, RoutedEventArgs e)
+        {
+            main_screen frm = new main_screen();
+            this.Content = frm.Content;
+        }
+
+        private void bt_staff_Click(object sender, RoutedEventArgs e)
+        {
+            staff_menu frm = new staff_menu();
+            this.Content = frm.Content;
         }
     }
 }

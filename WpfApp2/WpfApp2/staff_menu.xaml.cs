@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -28,13 +29,13 @@ namespace WpfApp2
         private void btn_bookings_Click(object sender, RoutedEventArgs e)
         {
             booking_screen frm = new booking_screen();
-            frm.Show();
+            this.Content = frm.Content;
         }
 
         private void btn_patients_Click(object sender, RoutedEventArgs e)
         {
             Patients frm = new Patients();
-            frm.Show();
+            this.Content = frm.Content;
 
         }
 
@@ -61,7 +62,39 @@ namespace WpfApp2
         private void btn_home_Click(object sender, RoutedEventArgs e)
         {
             main_screen frm = new main_screen();
-            frm.Show();
+            this.Content = frm.Content;
+        }
+
+        private void Search_Staff(object sender, RoutedEventArgs e)
+        {
+            if (SearchBox.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
+            {
+                //stores what's in the Searchbox in a variable
+                string id = SearchBox.Text;
+                //creates the SQL query
+                string query = @"SELECT * FROM Staff WHERE Staff_ID = '" + id + "';";
+
+                DBConnection connection = DBConnection.getDBConnectionInstance();
+                DataSet staffData = connection.getDataSet(query);
+                //checks that the query returned exactly one result
+                int count = staffData.Tables[0].Rows.Count;
+
+
+                if (count == 1)
+                {
+                    staff_individual staff = new staff_individual(id, staffData);
+                    staff.Show();
+                }
+                else
+                {
+                    MessageBox.Show("No staff member found.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No staff member found.");
+            }
         }
     }
-}
+ }
+

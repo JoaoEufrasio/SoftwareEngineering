@@ -14,15 +14,6 @@
         <Button x:Name="bt_new_booking" Content="New Booking" HorizontalAlignment="Left" Margin="265,91,0,0" VerticalAlignment="Top" Width="100" Cursor="Hand" Height="50"/>
         <TextBox x:Name="search_patient" HorizontalAlignment="Left" Height="24" Margin="402,179,0,0" TextWrapping="Wrap" Text="Search Patient" VerticalAlignment="Top" Width="89" Cursor="IBeam"/>
         <TextBox x:Name="search_booking" HorizontalAlignment="Left" Height="24" Margin="276,179,0,0" TextWrapping="Wrap" Text="Search Booking" VerticalAlignment="Top" Width="89" Cursor="IBeam"/>
-        <ListView x:Name="list_todays_patient" HorizontalAlignment="Left" Height="206" Margin="25,91,0,0" VerticalAlignment="Top" Width="178">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-            <ListBoxItem Content="Patient Name-GP-Time-Room" Height="22" Width="134"/>
-            <ScrollBar Height="155" Width="24"/>
-        </ListView>
         <Label x:Name="todays_patient" Content="Todays's Patient" HorizontalAlignment="Left" Margin="25,64,0,0" VerticalAlignment="Top" Height="27" Width="99"/>
         <Button x:Name="bTsearch" Height="24" Width="24" Margin="252,179,236,116" Click="button_searchBooking">
             <Button.Template>
@@ -38,6 +29,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="25,107,0,0" VerticalAlignment="Top" Height="160" Width="208"/>
 
     </Grid>
 </Window>
