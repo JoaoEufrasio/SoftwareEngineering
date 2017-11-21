@@ -94,19 +94,19 @@ namespace WpfApp2
             }
         }
         
-        private void FillDataGrid()
-        {
-            string ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
-            string CmdString = string.Empty;
-            using (SqlConnection con = new SqlConnection(ConString))
-            {
-                CmdString = "SELECT * FROM Bookings where Booking_Date = CAST(CURRENT_TIMESTAMP AS DATE)";
-                SqlCommand cmd = new SqlCommand(CmdString, con);
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable("Bookings");
-                sda.Fill(dt);
-                grdBookings.ItemsSource = dt.DefaultView;
-            }
-          }
+//        private void FillDataGrid()
+//        {
+//            string ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
+//            string CmdString = string.Empty;
+//            using (SqlConnection con = new SqlConnection(ConString))
+//            {
+//                CmdString = "SELECT * FROM Bookings where Booking_Date = CAST(CURRENT_TIMESTAMP AS DATE)";
+//                SqlCommand cmd = new SqlCommand(CmdString, con);
+//                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+//                DataTable dt = new DataTable("Bookings");
+//                sda.Fill(dt);
+//                grdBookings.ItemsSource = dt.DefaultView;
+//            }
+//          }
     }
 }
