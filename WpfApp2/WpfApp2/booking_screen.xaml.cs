@@ -78,7 +78,6 @@ namespace WpfApp2
                 //checks that the query returned exactly one result
                 int count = bookingData.Tables[0].Rows.Count;
 
-
                 if (count == 1)
                 {
                     booking_screen booking = new booking_screen(id, bookingData);

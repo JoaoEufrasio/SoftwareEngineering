@@ -11,8 +11,7 @@
         <Button x:Name="bt_patients" Content="Patients" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37" Click="bt_patients_Click"/>
         <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Click="bt_staff_Click"/>
         <Button x:Name="bt_new_booking" Content="New Booking" HorizontalAlignment="Left" Margin="369,42,0,0" VerticalAlignment="Top" Width="110" Height="24" Click="bt_new_booking_Click"/>
-        <TextBox x:Name="booking_search" HorizontalAlignment="Left" Height="24" Margin="369,75,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="110"/>
-        <Image HorizontalAlignment="Left" Height="24" Margin="338,75,0,0" VerticalAlignment="Top" Width="26" Source="search_icon.PNG" ContextMenuClosing="button_searchBooking"/>
+        <TextBox x:Name="booking_search" HorizontalAlignment="Left" Height="24" Margin="369,75,0,0" TextWrapping="Wrap" Text="Search by ID" VerticalAlignment="Top" Width="110"/>
         <Calendar x:Name="booking_calendar" HorizontalAlignment="Left" Margin="313,121,0,0" VerticalAlignment="Top" Width="179"/>
         <ListView x:Name="booking_list" HorizontalAlignment="Left" Height="161" Margin="28,107,0,0" VerticalAlignment="Top" Width="157">
             <ListView.View>
@@ -23,6 +22,13 @@
             <ListBoxItem Content="Patient name- GP-time-room" Height="53" Width="113" Cursor="Hand" Selected="ListBoxItem_Selected" FontWeight="Bold" FontStyle="Italic"/>
             <ScrollBar Height="75" Width="19"/>
         </ListView>
+        <Button x:Name="bTsearch" Height="24" Width="24" Margin="330,75,158,220" Click="button_searchBooking">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="search_icon.PNG"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
     </Grid>
 </Window>
