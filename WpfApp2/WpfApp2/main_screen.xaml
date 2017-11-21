@@ -14,8 +14,6 @@
         <Button x:Name="bt_new_booking" Content="New Booking" HorizontalAlignment="Left" Margin="265,91,0,0" VerticalAlignment="Top" Width="100" Cursor="Hand" Height="50"/>
         <TextBox x:Name="search_patient" HorizontalAlignment="Left" Height="24" Margin="402,179,0,0" TextWrapping="Wrap" Text="Search Patient" VerticalAlignment="Top" Width="89" Cursor="IBeam"/>
         <TextBox x:Name="search_booking" HorizontalAlignment="Left" Height="24" Margin="276,179,0,0" TextWrapping="Wrap" Text="Search Booking" VerticalAlignment="Top" Width="89" Cursor="IBeam"/>
-        <Image x:Name="search_booking_icon" HorizontalAlignment="Left" Height="24" Margin="250,179,0,0" VerticalAlignment="Top" Width="26" Source="search_icon.PNG"/>
-        <Image x:Name="search_patient_icon" HorizontalAlignment="Left" Height="24" Margin="376,179,0,0" VerticalAlignment="Top" Width="26" Source="search_icon.PNG"/>
         <ListView x:Name="list_todays_patient" HorizontalAlignment="Left" Height="206" Margin="25,91,0,0" VerticalAlignment="Top" Width="178">
             <ListView.View>
                 <GridView>
@@ -26,6 +24,20 @@
             <ScrollBar Height="155" Width="24"/>
         </ListView>
         <Label x:Name="todays_patient" Content="Todays's Patient" HorizontalAlignment="Left" Margin="25,64,0,0" VerticalAlignment="Top" Height="27" Width="99"/>
+        <Button x:Name="bTsearch" Height="24" Width="24" Margin="252,179,236,116" Click="button_searchBooking">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="search_icon.PNG"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="bTsearch1" Height="24" Width="24" Margin="378,179,110,116" Click="button_searchPatient" RenderTransformOrigin="5.62,0.501">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="search_icon.PNG"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
     </Grid>
 </Window>
