@@ -25,6 +25,13 @@ namespace WpfApp2
         public booking_screen()
         {           
             InitializeComponent();
+            string date = DateTime.Today.ToString("MM/dd/yyyy");
+            date = date.Split(' ')[0];
+            string sqlQuery = @"SELECT Patients.Patient_ID, Patients.Patient_name, Patients.Patient_surname, Bookings.Booking_ID, Bookings.Booking_Date, Bookings.Time, Bookings.Room FROM Patients INNER JOIN Bookings ON Patients.Patient_ID = Bookings.Patient_ID WHERE Bookings.Booking_date = '" + date + "'";
+            DBConnection connection = DBConnection.getDBConnectionInstance();
+            DataSet todayBookings = connection.getDataSet(sqlQuery);
+            DataTable dt = todayBookings.Tables[0];
+            bookingsGrid.ItemsSource = dt.DefaultView;
         }
 
         public booking_screen(string id, DataSet data)
@@ -63,8 +70,8 @@ namespace WpfApp2
             Booking_new frm = new Booking_new();
             frm.Show();
         }
-
-        private void button_searchBooking(object sender, ContextMenuEventArgs e)
+                
+        private void bTsearch_Click(object sender, RoutedEventArgs e)
         {
             if (booking_search.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
             {
@@ -93,20 +100,5 @@ namespace WpfApp2
                 MessageBox.Show("No booking found.");
             }
         }
-        
-//        private void FillDataGrid()
-//        {
-//            string ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
-//            string CmdString = string.Empty;
-//            using (SqlConnection con = new SqlConnection(ConString))
-//            {
-//                CmdString = "SELECT * FROM Bookings where Booking_Date = CAST(CURRENT_TIMESTAMP AS DATE)";
-//                SqlCommand cmd = new SqlCommand(CmdString, con);
-//                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-//                DataTable dt = new DataTable("Bookings");
-//                sda.Fill(dt);
-//                grdBookings.ItemsSource = dt.DefaultView;
-//            }
-//          }
     }
 }

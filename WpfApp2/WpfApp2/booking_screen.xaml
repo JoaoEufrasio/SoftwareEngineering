@@ -13,22 +13,9 @@
         <Button x:Name="bt_new_booking" Content="New Booking" HorizontalAlignment="Left" Margin="369,42,0,0" VerticalAlignment="Top" Width="110" Height="24" Click="bt_new_booking_Click"/>
         <TextBox x:Name="booking_search" HorizontalAlignment="Left" Height="24" Margin="369,75,0,0" TextWrapping="Wrap" Text="Search by ID" VerticalAlignment="Top" Width="110"/>
         <Calendar x:Name="booking_calendar" HorizontalAlignment="Left" Margin="313,121,0,0" VerticalAlignment="Top" Width="179"/>
-        <ListView x:Name="booking_list" HorizontalAlignment="Left" Height="161" Margin="28,107,0,0" VerticalAlignment="Top" Width="157">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-            <ListBoxItem Content="Patient name- GP-time-room" Height="53" Width="113" Cursor="Hand" Selected="ListBoxItem_Selected" FontWeight="Bold" FontStyle="Italic"/>
-            <ScrollBar Height="75" Width="19"/>
-        </ListView>
-        <Button x:Name="bTsearch" Height="24" Width="24" Margin="330,75,158,220" Click="button_searchBooking">
-            <Button.Template>
-                <ControlTemplate>
-                    <Image Source="search_icon.PNG"/>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
+        <DataGrid x:Name="bookingsGrid" AutoGenerateColumns="True" HorizontalAlignment="Left" Margin="22,113,0,0" VerticalAlignment="Top" Height="176" Width="271"/>
+        <Button x:Name="bTsearch" Content="Search" HorizontalAlignment="Left" Margin="278,75,0,0" VerticalAlignment="Top" Width="75" Click="bTsearch_Click"/>
+        <Label x:Name="label" Content="Today's Bookings" HorizontalAlignment="Left" Margin="22,80,0,0" VerticalAlignment="Top" FontSize="13.333"/>
 
     </Grid>
 </Window>
