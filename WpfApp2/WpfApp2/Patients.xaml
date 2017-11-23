@@ -11,16 +11,7 @@
         <Button x:Name="bt_booking" Content="Bookings" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_booking_Click"/>
         <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_staff_Click"/>
         <Button x:Name="bt_register_patient" Content="Register Patient" HorizontalAlignment="Left" Margin="369,199,0,0" VerticalAlignment="Top" Width="110" Height="30" Cursor="Hand" Click="bt_register_patient_Click"/>
-        <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Height="24" Margin="369,78,-14,0" TextWrapping="Wrap" Text="Search Patient" VerticalAlignment="Top" Width="110" TextChanged="SearchBox_TextChanged"/>
-        <ListView HorizontalAlignment="Left" Height="161" Margin="28,107,0,0" VerticalAlignment="Top" Width="157">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-            <ListBoxItem Content="Name-ID-Time-of-booking&#xD;&#xA;" Height="57" Width="93"/>
-            <ScrollBar Height="73" Width="35"/>
-        </ListView>
+        <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Height="24" Margin="369,78,-14,0" TextWrapping="Wrap" Text="Patient by ID" VerticalAlignment="Top" Width="110"/>
         <Label x:Name="todays_patient" Content="Today's Patient" HorizontalAlignment="Left" Margin="28,78,0,0" VerticalAlignment="Top"/>
         <Image x:Name="bt_edit" HorizontalAlignment="Left" Height="17" Margin="159,85,0,0" VerticalAlignment="Top" Width="26" Source="edit_button.png"/>
         <Button Height="24" Width="24" Margin="345,78,143,217" Click="Button_Click">
@@ -30,6 +21,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="28,122,0,0" VerticalAlignment="Top" Height="170" Width="282"/>
 
     </Grid>
 </Window>

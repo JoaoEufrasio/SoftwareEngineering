@@ -23,22 +23,25 @@ namespace WpfApp2
         public Patients()
         {
             InitializeComponent();
+            string date = DateTime.Today.ToString("MM/dd/yyyy");
+            date = date.Split(' ')[0];
+            string sqlQuery = @"SELECT Patients.Patient_ID, Patients.Patient_name, Patients.Patient_surname, Bookings.Booking_ID, Bookings.Booking_Date, Bookings.Time, Bookings.Room FROM Patients INNER JOIN Bookings ON Patients.Patient_ID = Bookings.Patient_ID WHERE Bookings.Booking_date = '" + date + "'";
+            DBConnection connection = DBConnection.getDBConnectionInstance();
+            DataSet todayPatients = connection.getDataSet(sqlQuery);
+            DataTable dt = todayPatients.Tables[0];
+            dataGrid.ItemsSource = dt.DefaultView;
         }
 
         private void bt_register_patient_Click(object sender, RoutedEventArgs e)
         {
-
+            Patient_registration frm = new Patient_registration();
+            this.Content = frm.Content;
         }
 
         private void bt_booking_Click(object sender, RoutedEventArgs e)
         {
             booking_screen frm = new booking_screen();
             this.Content = frm.Content;
-        }
-
-        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -54,7 +57,6 @@ namespace WpfApp2
                 DataSet patientData = connection.getDataSet(query);
                 //checks that the query returned exactly one result
                 int count = patientData.Tables[0].Rows.Count;
-
 
                 if (count == 1)
                 {
