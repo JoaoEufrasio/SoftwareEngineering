@@ -93,6 +93,7 @@
     <Compile Include="main_screen.xaml.cs">
       <DependentUpon>main_screen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Patient.cs" />
     <Compile Include="Patients.xaml.cs">
       <DependentUpon>Patients.xaml</DependentUpon>
     </Compile>

@@ -62,7 +62,8 @@ namespace WpfApp2
         private void btn_home_Click(object sender, RoutedEventArgs e)
         {
             main_screen frm = new main_screen();
-            this.Content = frm.Content;
+            frm.Show();
+            this.Hide();
         }
 
         private void Search_Staff(object sender, RoutedEventArgs e)
@@ -71,24 +72,14 @@ namespace WpfApp2
             {
                 //stores what's in the Searchbox in a variable
                 string id = SearchBox.Text;
-                //creates the SQL query
-                string query = @"SELECT * FROM Staff WHERE Staff_ID = '" + id + "';";
-
-                DBConnection connection = DBConnection.getDBConnectionInstance();
-                DataSet staffData = connection.getDataSet(query);
+                this.Hide();
+                Staff.viewStaff(id);
+                
                 //checks that the query returned exactly one result
-                int count = staffData.Tables[0].Rows.Count;
+                
 
 
-                if (count == 1)
-                {
-                    staff_individual staff = new staff_individual(id, staffData);
-                    staff.Show();
-                }
-                else
-                {
-                    MessageBox.Show("No staff member found.");
-                }
+                
             }
             else
             {

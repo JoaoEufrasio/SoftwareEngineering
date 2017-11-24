@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WpfApp2
 {
@@ -26,49 +27,36 @@ namespace WpfApp2
             connection.book(sqlQuery, id, doctor, date, time, room, description);
                
         }
-        public static void viewBooking()
+        public static void cancelBooking(string id)
         {
-
-
-            string query = "SELECT * FROM Bookings WHERE Patient_Id = 1";
-            // (Patient_id, Staff_Id , Booking_date, Time, Room, Description) VALUES('Patient_Id', 'Doctor_Id', 'Date', 'Time', 'Room', @tb_description)
-            //connect to database
+            string sqlQuery;
+            //creates the query with parameters 
+            sqlQuery = @"DELETE FROM Bookings where Booking_Id =@Booking_ID;";
             DBConnection connection = DBConnection.getDBConnectionInstance();
-            DataSet DataLogin = connection.getDataSet(query);
-       //     SqlDataReader reader = DataLogin.
-            
-            /*while (myReader.Read())
-            {
-                TextBoxPassword.Text = (myReader["password"].ToString());
-                TextBoxRPassword.Text = (myReader["retypepassword"].ToString());
-                DropDownListGender.SelectedItem.Text = (myReader["gender"].ToString());
-                DropDownListMonth.Text = (myReader["birth"].ToString());
-                DropDownListYear.Text = (myReader["birth"].ToString());
-                TextBoxAddress.Text = (myReader["address"].ToString());
-                TextBoxCity.Text = (myReader["city"].ToString());
-                DropDownListCountry.SelectedItem.Text = (myReader["country"].ToString());
-                TextBoxPostcode.Text = (myReader["postcode"].ToString());
-                TextBoxEmail.Text = (myReader["email"].ToString());
-                TextBoxCarno.Text = (myReader["carno"].ToString());
-            }*/
-
-            //tb_patient_id.Text = ["Patient_Id"].ToString();
-
-            /*  
+            connection.deleteBooking(sqlQuery, id);
+            MessageBox.Show("Booking deleted.");
+        }
+        public static void viewBooking(string id)
         {
-            DBConnection con = new DBConnection(strConnString);
-            con.Open();
-            str = "SELECT * FROM Booking ";
-            com = new SqlCommand(str, con);
-            SqlDataReader reader = com.ExecuteReader();
 
-            reader.Read();
-            tb_patient_id.Text = reader["Name"].ToString();
 
-            reader.Close();
-            con.Close();
+            //creates the SQL query
+            string query = @"SELECT *, Patients.Patient_name, Patients.Patient_surname FROM Bookings INNER JOIN Patients ON Bookings.Patient_ID = Patients.Patient_ID WHERE Booking_Id = '" + id + "';";
+            DBConnection connection = DBConnection.getDBConnectionInstance();
+            DataSet bookingData = connection.getDataSet(query);
+            //checks that the query returned exactly one result
+            int count = bookingData.Tables[0].Rows.Count;
 
-        }*/
+            if (count == 1)
+            {
+                Individual_bookings booking = new Individual_bookings(id, bookingData);
+                booking.Show();
+            }
+            else
+            {
+                MessageBox.Show("No patient found.");
+            }
+
 
 
         }

@@ -42,7 +42,7 @@ namespace WpfApp2
         public void openConnection()
         {
             
-            ConnectionStr = @"";
+            ConnectionStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=K:\SoftwareEngineering-master\SoftwareEngineering-master\WpfApp2\WpfApp2\Database1.mdf;Integrated Security=True";
             // create the connection to the database as an instance of SqlConnection
             connectionToDB = new SqlConnection(connectionString);
 

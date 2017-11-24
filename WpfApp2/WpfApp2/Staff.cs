@@ -1,24 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
 using System.Text;
+using System.Windows.Controls;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WpfApp2
 {
-    class Staff
+    static class Staff
     {
-        public static void viewStaff()
+        public static void viewStaff(string id)
         {
-            string query = "SELECT * FROM Staff WHERE Staff_Id = 1";
-            
-            
+            string query = @"SELECT * FROM Staff WHERE Staff_ID = '" + id + "';";
+
+
             //connect to database
             DBConnection connection = DBConnection.getDBConnectionInstance();
-            DataSet DataLogin = connection.getDataSet(query);
+            DataSet staffData = connection.getDataSet(query);
+            int count = staffData.Tables[0].Rows.Count;
 
 
-            //tb_staff_id.Text = ["Staff_Id"].ToString();
-        }
+            if (count == 1)
+            {
+                staff_individual staff = new staff_individual(id, staffData);
+                staff.Show();
+            }
+            else
+            {
+                MessageBox.Show("No staff member found.");
+            }
+        
+
+
+}
     }
 }

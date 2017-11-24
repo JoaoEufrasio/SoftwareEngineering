@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,11 +23,26 @@ namespace WpfApp2
       
 
     {
-        public Individual_bookings()
+        string bookingId;
+        DataSet bookingData;
+        public Individual_bookings(string id, DataSet data)
         {
             InitializeComponent();
-
-            Booking.viewBooking();
+            //the constructor gets passed the ID of the patient this information belongs to and the actual dataset
+            bookingId = id;
+            bookingData = data;
+            InitializeComponent();
+            //the data from the database is put into the corresponding text boxes (or blocks)
+            
+            tb_patientid.Text = bookingData.Tables[0].Rows[0].Field<int>("Patient_Id").ToString();
+            tb_name.Text = bookingData.Tables[0].Rows[0].Field<string>("Patient_name").Trim() + " " + bookingData.Tables[0].Rows[0].Field<string>("Patient_surname").Trim();
+            tb_doctor.Text = bookingData.Tables[0].Rows[0].Field<int>("Staff_Id").ToString();
+            tb_date.Text = bookingData.Tables[0].Rows[0].Field<DateTime>("Booking_Date").ToString().Split(' ')[0];
+            tb_time.Text = bookingData.Tables[0].Rows[0].Field<TimeSpan>("Time").ToString();
+            tb_room.Text = bookingData.Tables[0].Rows[0].Field<string>("Room");
+            tb_description.Text = bookingData.Tables[0].Rows[0].Field<string>("Description");
+            tb_bookingid.Text = id;
+            //Booking.viewBooking();
         }
 
         private void bt_cancel_booking_Click(object sender, RoutedEventArgs e)
@@ -34,13 +50,26 @@ namespace WpfApp2
             if (System.Windows.MessageBox.Show("Are you sure want to save changes", "Save Booking Changes",
        MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                string sqlQuery;
-                //creates the query with parameters 
-                sqlQuery = @"DELETE FROM Bookings where Booking_Id =@Booking_ID;";
-                DBConnection connection = DBConnection.getDBConnectionInstance();
-                connection.deleteBooking(sqlQuery, Booking_ID.Text);
-                System.Windows.Forms.MessageBox.Show("Booking deleted.");
+                Booking.cancelBooking(tb_bookingid.Text);
             }
+        }
+        public void ViewBookings()
+        {
+            string query = "SELECT * FROM Bookings WHERE Patient_Id = 1";
+            // (Patient_id, Staff_Id , Booking_date, Time, Room, Description) VALUES('Patient_Id', 'Staff_Id', 'Date', 'Time', 'Room', @tb_description)
+            //connect to database
+            DBConnection connection = DBConnection.getDBConnectionInstance();
+            DataSet DataLogin = connection.getDataSet(query);
+
+            DataRow bookingData = DataLogin.Tables[0].Rows[0];
+
+            tb_bookingid.Text = bookingData["Booking_Id"].ToString();
+            tb_patientid.Text = bookingData["Patient_Id"].ToString();
+            tb_name.Text = bookingData["Patient_name"].ToString();
+            tb_date.Text = bookingData["Time"].ToString();
+            tb_doctor.Text = bookingData["Staff_Id"].ToString();
+            tb_room.Text = bookingData["Room"].ToString();
+            tb_description.Text = bookingData["Description"].ToString();
         }
 
         private void tb_name_TextChanged(object sender, TextChangedEventArgs e)
@@ -55,16 +84,16 @@ namespace WpfApp2
             {
                 //code taken from https://stackoverflow.com/questions/4503542/check-for-special-characters-in-a-string
                 //makes sure the characters in text boxes are letters, digits or spaces
-                if (ID.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c))
-                    && Doctor.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && Date.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c))
-                    && Time.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && Room.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
+                if (tb_patientid.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c))
+                    && tb_doctor.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && tb_date.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c))
+                    && tb_time.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && tb_room.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
                 {
                     //creates the query
                     string sqlQuery;
                     //creates the query with parameters instead of data from the user. That data will be inserted in the query later, in the back-end
                     sqlQuery = @"UPDATE Bookings SET Patient_Id = @PatientID, Staff_Id = @DoctorID, Booking_Date = @Date, Time = @Time, Room = @Room, Description = @Description WHERE Booking_Id = 7002";
                     DBConnection connection = DBConnection.getDBConnectionInstance();
-                    connection.book(sqlQuery, ID.Text, Doctor.Text, Date.Text, Time.Text, Room.Text, Description.Text);
+                    connection.book(sqlQuery, tb_patientid.Text, tb_doctor.Text, tb_date.Text, tb_time.Text, tb_room.Text, tb_description.Text);
                     System.Windows.MessageBox.Show("Booking updated.");
                 }
 

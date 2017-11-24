@@ -78,22 +78,7 @@ namespace WpfApp2
                 //stores what's in the Searchbox in a variable
                 string id = booking_search.Text;
                 //creates the SQL query
-                string query = @"SELECT * FROM Bookings WHERE Booking_Id = '" + id + "';";
-
-                DBConnection connection = DBConnection.getDBConnectionInstance();
-                DataSet bookingData = connection.getDataSet(query);
-                //checks that the query returned exactly one result
-                int count = bookingData.Tables[0].Rows.Count;
-
-                if (count == 1)
-                {
-                    booking_screen booking = new booking_screen(id, bookingData);
-                    booking.Show();
-                }
-                else
-                {
-                    MessageBox.Show("No booking found.");
-                }
+                Booking.viewBooking(id);
             }
             else
             {
