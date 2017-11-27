@@ -24,6 +24,8 @@ namespace WpfApp2
         public staff_menu()
         {
             InitializeComponent();
+            DataTable shifts = Staff.shiftsGrid();
+            dataGrid.ItemsSource = shifts.DefaultView;
         }
 
         private void btn_bookings_Click(object sender, RoutedEventArgs e)

@@ -35,6 +35,11 @@ namespace WpfApp2
             tb_contact_details.Text = staffData.Tables[0].Rows[0].Field<string>("Staff_phone_number");
             tb_role.Text = staffData.Tables[0].Rows[0].Field<string>("Role");
 
+            DataTable shifts = Staff.individualShiftsGrid(tb_staff_id.Text);
+            DataTable bookings = Staff.individualBookingGrid(tb_staff_id.Text);
+            dataGrid.ItemsSource = shifts.DefaultView;
+            bookingsGrid.ItemsSource = bookings.DefaultView;
+
         }
 
         private void bt_bookings_Click(object sender, RoutedEventArgs e)

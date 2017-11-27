@@ -11,20 +11,9 @@
         <Button x:Name="bt_patients" Content="Patients" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Click="bt_patients_Click"/>
         <Button x:Name="bt_home" Content="Home" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_home_Click"/>
         <Calendar x:Name="staff_calendar" HorizontalAlignment="Left" Margin="313,165,0,0" VerticalAlignment="Top"/>
-        <ListView HorizontalAlignment="Left" Height="157" Margin="28,176,0,0" VerticalAlignment="Top" Width="161" SelectionChanged="ListView_SelectionChanged">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-            <ListBoxItem x:Name="date_shift" Content="Date-Shift" Width="108" Selected="ListBoxItem_Selected" FontWeight="Bold" FontStyle="Italic" Height="33"/>
-            <ScrollBar x:Name="shift_list_scroller" Height="96" Width="32"/>
-        </ListView>
-        <Label x:Name="staff_shift_week" Content="Shift(Date)" HorizontalAlignment="Left" Margin="33,151,0,0" VerticalAlignment="Top" Height="25" Width="122"/>
-        <Image HorizontalAlignment="Left" Height="24" Margin="160,152,0,0" VerticalAlignment="Top" Width="26" Source="edit_button.png"/>
+        <Label x:Name="staff_shift_week" Content="Shifts" HorizontalAlignment="Left" Margin="33,151,0,0" VerticalAlignment="Top" Height="25" Width="122"/>
         <Image HorizontalAlignment="Left" Height="24" Margin="-1,44,0,0" VerticalAlignment="Top" Width="26" Source="back_icon.ico"/>
         <Label x:Name="lb_staff_id" Content="Staff ID" HorizontalAlignment="Left" Margin="30,44,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tb_staff_id" HorizontalAlignment="Left" Height="23" Margin="84,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lb_staff_name" Content="Name" HorizontalAlignment="Left" Margin="37,75,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tb_staff_name" HorizontalAlignment="Left" Height="23" Margin="84,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lb_address" Content="Address" HorizontalAlignment="Left" Margin="209,44,0,0" VerticalAlignment="Top"/>
@@ -35,6 +24,10 @@
         <TextBox x:Name="tb_dob" HorizontalAlignment="Left" Height="23" Margin="267,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lb_role" Content="Role" HorizontalAlignment="Left" Margin="224,114,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tb_role" HorizontalAlignment="Left" Height="23" Margin="267,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="tb_staff_id" HorizontalAlignment="Left" Margin="84,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="37,181,0,0" VerticalAlignment="Top" Height="152" Width="133"/>
+        <DataGrid x:Name="bookingsGrid" HorizontalAlignment="Left" Margin="170,181,0,0" VerticalAlignment="Top" Height="152" Width="88"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="170,156,0,0" TextWrapping="Wrap" Text="Bookings" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

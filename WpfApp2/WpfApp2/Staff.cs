@@ -34,6 +34,40 @@ namespace WpfApp2
         
 
 
-}
+        }
+
+        public static DataTable shiftsGrid()
+        {
+            string date = DateTime.Today.ToString("MM/dd/yyyy");
+            date = date.Split(' ')[0];
+            string sqlQuery = @"SELECT Staff.Staff_name AS Name, Staff.Staff_surname AS Surname, Shifts.Start_time AS 'Shift start', Shifts.End_time AS 'Shift end' FROM Shifts INNER JOIN Staff ON Shifts.Staff_Id = Staff.Staff_Id WHERE Shifts.Shift_date = '" + date + "';";
+            DBConnection connection = DBConnection.getDBConnectionInstance();
+            DataSet todayStaff = connection.getDataSet(sqlQuery);
+            DataTable dt = todayStaff.Tables[0];
+            return dt;
+        }
+
+        public static DataTable individualShiftsGrid(string id)
+        {
+            string date = DateTime.Today.ToString("MM/dd/yyyy");
+            date = date.Split(' ')[0];
+            string sqlQuery = @"SELECT Shifts.Start_time AS 'Shift start', Shifts.End_time AS 'Shift end' FROM Shifts WHERE Shifts.Staff_Id = '" + id + "' AND Shifts.Shift_date = '" + date + "';";
+            string bookingsQuery = @"SELECT Time FROM Bookings WHERE Staff_Id = '" + id + "' AND Booking_Date = '" + date + "';";
+            DBConnection connection = DBConnection.getDBConnectionInstance();
+            DataSet todayShifts = connection.getDataSet(sqlQuery);
+            DataTable dt = todayShifts.Tables[0];
+            return dt;
+        }
+
+        public static DataTable individualBookingGrid(string id)
+        {
+            string date = DateTime.Today.ToString("MM/dd/yyyy");
+            date = date.Split(' ')[0];
+            string bookingsQuery = @"SELECT Time FROM Bookings WHERE Staff_Id = '" + id + "' AND Booking_Date = '" + date + "';";
+            DBConnection connection = DBConnection.getDBConnectionInstance();
+            DataSet todayBookings = connection.getDataSet(bookingsQuery);
+            DataTable dt = todayBookings.Tables[0];
+            return dt;
+        }
     }
 }
