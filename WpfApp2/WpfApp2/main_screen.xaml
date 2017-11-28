@@ -5,31 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="main_screen" Height="350" Width="520">
+        Title="main_screen" Height="377.432" Width="660.946">
     <Grid>
-        <Button x:Name="bt_bookings" Content="Booking" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37" Click="bt_bookings_Click"/>
-        <Button x:Name="bt_patients" Content="Patients" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37" Click="bt_patients_Click"/>
-        <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_staff_Click"/>
-        <Button x:Name="bt_register_patient" Content="Register Patient" HorizontalAlignment="Left" Margin="384,91,0,0" VerticalAlignment="Top" Width="100" Height="50" Click="bt_register_patient_Click"/>
-        <Button x:Name="bt_new_booking" Content="New Booking" HorizontalAlignment="Left" Margin="265,91,0,0" VerticalAlignment="Top" Width="100" Cursor="Hand" Height="50"/>
-        <TextBox x:Name="search_patient" HorizontalAlignment="Left" Height="24" Margin="402,179,0,0" TextWrapping="Wrap" Text="Search Patient" VerticalAlignment="Top" Width="89" Cursor="IBeam"/>
-        <TextBox x:Name="search_booking" HorizontalAlignment="Left" Height="24" Margin="276,179,0,0" TextWrapping="Wrap" Text="Search Booking" VerticalAlignment="Top" Width="89" Cursor="IBeam"/>
+        <Button x:Name="bt_bookings" Content="Booking" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37" Click="bt_bookings_Click" Margin="58,1,0,0"/>
+        <Button x:Name="bt_patients" Content="Patients" HorizontalAlignment="Left" Margin="228,1,0,0" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37" Click="bt_patients_Click"/>
+        <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="398,1,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_staff_Click"/>
+        <Button x:Name="bt_register_patient" Content="Register Patient" HorizontalAlignment="Left" Margin="148,272,0,0" VerticalAlignment="Top" Width="100" Height="50" Click="bt_register_patient_Click"/>
+        <Button x:Name="bt_new_booking" Content="New Booking" HorizontalAlignment="Left" Margin="24,272,0,0" VerticalAlignment="Top" Width="100" Cursor="Hand" Height="50"/>
+        <TextBox x:Name="search_patient" HorizontalAlignment="Left" Height="24" Margin="475,190,0,0" TextWrapping="Wrap" Text="Search Patient" VerticalAlignment="Top" Width="97" Cursor="IBeam"/>
+        <TextBox x:Name="search_booking" HorizontalAlignment="Left" Height="24" Margin="475,133,0,0" TextWrapping="Wrap" Text="Search Booking" VerticalAlignment="Top" Width="97" Cursor="IBeam"/>
         <Label x:Name="todays_patient" Content="Todays's Patient" HorizontalAlignment="Left" Margin="25,64,0,0" VerticalAlignment="Top" Height="27" Width="99"/>
-        <Button x:Name="bTsearch" Height="24" Width="24" Margin="252,179,236,116" Click="button_searchBooking">
+        <Button x:Name="bTsearch" Height="24" Width="24" Margin="588,133,41,189" Click="button_searchBooking">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="search_icon.PNG"/>
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="bTsearch1" Height="24" Width="24" Margin="378,179,110,116" Click="button_searchPatient" RenderTransformOrigin="5.62,0.501">
+        <Button x:Name="bTsearch1" Height="24" Width="24" Margin="588,190,41,132" Click="button_searchPatient" RenderTransformOrigin="5.62,0.501">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="search_icon.PNG"/>
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="25,107,0,0" VerticalAlignment="Top" Height="160" Width="208"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="25,96,0,0" VerticalAlignment="Top" Height="160" Width="430"/>
 
     </Grid>
 </Window>

@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="Bookings" Height="350" Width="520">
+        Title="Bookings" Height="377.432" Width="660.946">
     <Grid>
-        <Button x:Name="bt_home" Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_home_Click"/>
-        <Button x:Name="bt_patients" Content="Patients" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37" Click="bt_patients_Click"/>
-        <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Click="bt_staff_Click"/>
-        <Button x:Name="bt_new_booking" Content="New Booking" HorizontalAlignment="Left" Margin="369,42,0,0" VerticalAlignment="Top" Width="110" Height="24" Click="bt_new_booking_Click"/>
-        <TextBox x:Name="booking_search" HorizontalAlignment="Left" Height="24" Margin="369,75,0,0" TextWrapping="Wrap" Text="Search by ID" VerticalAlignment="Top" Width="110"/>
-        <Calendar x:Name="booking_calendar" HorizontalAlignment="Left" Margin="313,121,0,0" VerticalAlignment="Top" Width="179"/>
-        <DataGrid x:Name="bookingsGrid" AutoGenerateColumns="True" HorizontalAlignment="Left" Margin="22,113,0,0" VerticalAlignment="Top" Height="176" Width="271"/>
-        <Button x:Name="bTsearch" Content="Search" HorizontalAlignment="Left" Margin="278,75,0,0" VerticalAlignment="Top" Width="75" Click="bTsearch_Click"/>
+        <Button x:Name="bt_home" Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_home_Click" Margin="61,0,0,0"/>
+        <Button x:Name="bt_patients" Content="Patients" HorizontalAlignment="Left" Margin="231,0,0,0" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37" Click="bt_patients_Click"/>
+        <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="401,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Click="bt_staff_Click"/>
+        <Button x:Name="bt_new_booking" Content="New Booking" HorizontalAlignment="Left" Margin="483,303,0,0" VerticalAlignment="Top" Width="110" Height="24" Click="bt_new_booking_Click"/>
+        <TextBox x:Name="booking_search" HorizontalAlignment="Left" Height="24" Margin="113,303,0,0" TextWrapping="Wrap" Text="Search by ID" VerticalAlignment="Top" Width="110"/>
+        <Calendar x:Name="booking_calendar" HorizontalAlignment="Left" Margin="449,121,0,0" VerticalAlignment="Top" Width="179"/>
+        <DataGrid x:Name="bookingsGrid" AutoGenerateColumns="True" HorizontalAlignment="Left" Margin="22,113,0,0" VerticalAlignment="Top" Height="176" Width="409"/>
+        <Button x:Name="bTsearch" Content="Search" HorizontalAlignment="Left" Margin="22,303,0,0" VerticalAlignment="Top" Width="75" Click="bTsearch_Click"/>
         <Label x:Name="label" Content="Today's Bookings" HorizontalAlignment="Left" Margin="22,80,0,0" VerticalAlignment="Top" FontSize="13.333"/>
 
     </Grid>
