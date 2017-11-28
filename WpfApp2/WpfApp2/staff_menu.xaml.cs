@@ -30,14 +30,18 @@ namespace WpfApp2
 
         private void btn_bookings_Click(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             booking_screen frm = new booking_screen();
-            this.Content = frm.Content;
+            frm.Show();
+            this.Close();
         }
 
         private void btn_patients_Click(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             Patients frm = new Patients();
-            this.Content = frm.Content;
+            frm.Show();
+            this.Close();
 
         }
 
@@ -63,9 +67,10 @@ namespace WpfApp2
 
         private void btn_home_Click(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             main_screen frm = new main_screen();
             frm.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void Search_Staff(object sender, RoutedEventArgs e)
@@ -78,10 +83,7 @@ namespace WpfApp2
                 Staff.viewStaff(id);
                 
                 //checks that the query returned exactly one result
-                
-
-
-                
+                              
             }
             else
             {
