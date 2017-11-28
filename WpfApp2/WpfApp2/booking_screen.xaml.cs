@@ -84,7 +84,9 @@ namespace WpfApp2
                 //stores what's in the Searchbox in a variable
                 string id = booking_search.Text;
                 //creates the SQL query
-                Booking.viewBooking(id);
+                this.Hide();
+                Booking.viewBooking(id, false);
+                this.Close();
             }
             else
             {

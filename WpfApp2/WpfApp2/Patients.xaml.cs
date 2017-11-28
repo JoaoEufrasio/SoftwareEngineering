@@ -47,10 +47,23 @@ namespace WpfApp2
             {
                 //stores what's in the Searchbox in a variable
                 string id = SearchBox.Text;
-                Patient.searchPatient(id);
-               
+                if (SearchBox.Text.Contains(' '))
+                {
+                    string[] data = SearchBox.Text.Split(' ');
+                    this.Hide();
+                    Patient.searchPatientName(data, false);
+                    this.Close();
 
-               
+                }
+                else
+                {
+                    this.Hide();
+                    Patient.searchPatient(id, false);
+                    this.Close();
+                }
+
+
+
             }
             else
             {

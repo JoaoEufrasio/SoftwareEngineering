@@ -45,20 +45,26 @@ namespace WpfApp2
 
         private void bt_home_Click(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             main_screen frm = new main_screen();
             frm.Show();
+            this.Close();
         }
 
         private void bt_booking_Click(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             booking_screen frm = new booking_screen();
             frm.Show();
+            this.Close();
         }
 
         private void bt_staff_Click(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             staff_menu frm = new staff_menu();
             frm.Show();
+            this.Close();
         }
 
         private void bt_patient_record_Click(object sender, RoutedEventArgs e)

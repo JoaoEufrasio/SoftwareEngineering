@@ -107,20 +107,26 @@ namespace WpfApp2
 
         private void bt_home_Click(object sender, RoutedEventArgs e)
         {
-            main_screen frm = new main_screen();
-            frm.Show();
+            this.Hide();
+            main_screen arm = new main_screen();
+            arm.Show();
+            this.Close();
         }
 
         private void bt_patients_Click(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             Patients frm = new Patients();
             frm.Show();
+            this.Close();
         }
 
         private void bt_staff_Click(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             staff_menu frm = new staff_menu();
             frm.Show();
+            this.Close();
         }
 
         //Name of the class your method is in dot and the name of your method 

@@ -14,7 +14,7 @@
         <Button x:Name="btn_patients" Content="Patients" HorizontalAlignment="Left" Margin="225,0,0,0" VerticalAlignment="Top" Width="170" Height="37" ClickMode="Press" Click="btn_patients_Click" Cursor="Hand"/>
         <Button x:Name="btn_home" Content="Home" HorizontalAlignment="Left" Margin="395,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Click="btn_home_Click"/>
         <Calendar HorizontalAlignment="Left" Margin="461,121,0,0" VerticalAlignment="Top" Width="179" Height="168"/>
-        <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Height="24" Margin="519,88,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="110" AutomationProperties.Name="Search" Cursor="IBeam">
+        <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Height="24" Margin="519,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" AutomationProperties.Name="Search" Cursor="IBeam">
             <TextBox.Background>
                 <ImageBrush/>
             </TextBox.Background>
@@ -28,6 +28,7 @@
             </Button.Template>
         </Button>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="28,116,0,0" VerticalAlignment="Top" Height="173" Width="414"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="519,72,0,0" TextWrapping="Wrap" Text="Search for staff" VerticalAlignment="Top" RenderTransformOrigin="0.928,1.725"/>
 
     </Grid>
 </Window>

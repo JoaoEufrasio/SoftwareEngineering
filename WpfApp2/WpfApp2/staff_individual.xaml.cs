@@ -64,21 +64,27 @@ namespace WpfApp2
 
         private void bt_patients_Click(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             Patients frm = new Patients();
             frm.Show();
+            this.Close();
         }
 
         private void bt_home_Click(object sender, RoutedEventArgs e)
         {
-           main_screen frm = new main_screen();
+            this.Hide();
+            main_screen frm = new main_screen();
             frm.Show();
+            this.Close();
 
         }
 
         private void btn_ookings_Click(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             booking_screen frm = new booking_screen();
             frm.Show();
+            this.Close();
         }
         public void viewStaffDetails()
         {

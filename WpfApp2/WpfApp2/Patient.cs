@@ -11,7 +11,7 @@ namespace WpfApp2
 {
     static class Patient
     {
-        public static void searchPatient(string id)
+        public static void searchPatient(string id, bool main)
         {
             //creates the SQL query
             string query = @"SELECT * FROM Patients WHERE Patient_Id = '" + id + "';";
@@ -28,8 +28,64 @@ namespace WpfApp2
             else
             {
                 MessageBox.Show("No patient found.");
+                if (main)
+                {
+                    main_screen frm = new main_screen();
+                    frm.Show();
+                }
+                else
+                {
+                    Patients frm = new Patients();
+                    frm.Show();
+                }
             }
         }
+
+        public static void searchPatientName(string[] name, bool main)
+         {
+ 
+             //create sql statement
+             DBConnection connection = DBConnection.getDBConnectionInstance();
+             if (name[2].Contains('/'))
+             {
+                 string sqlQuery = @"SELECT * FROM Patients WHERE Patient_name = '" + name[0] + "' AND Patient_surname = '" + name[1] + "' AND Patient_date_of_birth = '" + name[2] + "';";
+                 DataSet patientData = connection.getDataSet(sqlQuery);
+                 //checks that the query returned exactly one result
+                 int count = patientData.Tables[0].Rows.Count;
+ 
+                 if (count == 1)
+                 {
+                     individual_patient patient = new individual_patient(patientData.Tables[0].Rows[0].Field<int>("Patient_Id").ToString(), patientData);
+                     patient.Show();
+                 }
+                 else
+                 {
+                     MessageBox.Show("No patient found.");
+                 }
+             }
+             else
+             {
+ 
+ 
+                 string query = @"SELECT * FROM Patients WHERE Patient_name = '" + name[0] + "' AND Patient_surname = '" + name[1] + "' AND Patient_postcode = '" + name[2] + "';";
+                 DataSet patientDataPostcode = connection.getDataSet(query);
+                 //checks that the query returned exactly one result
+                 int count = patientDataPostcode.Tables[0].Rows.Count;
+ 
+               if (count == 1)
+                 {
+                     individual_patient patient = new individual_patient(patientDataPostcode.Tables[0].Rows[0].Field<int>("Patient_Id").ToString(), patientDataPostcode);
+                     patient.Show();
+                 }
+                else
+                 {
+                     MessageBox.Show("No patient found.");
+                }
+            }
+             
+             
+             
+         }
 
         public static DataTable patientsGrid()
         {

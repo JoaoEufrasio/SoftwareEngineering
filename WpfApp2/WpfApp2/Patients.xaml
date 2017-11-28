@@ -11,7 +11,7 @@
         <Button x:Name="bt_booking" Content="Bookings" HorizontalAlignment="Left" Margin="237,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_booking_Click"/>
         <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="407,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_staff_Click"/>
         <Button x:Name="bt_register_patient" Content="Register Patient" HorizontalAlignment="Left" Margin="28,298,0,0" VerticalAlignment="Top" Width="110" Height="30" Cursor="Hand" Click="bt_register_patient_Click"/>
-        <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Height="24" Margin="473,151,0,0" TextWrapping="Wrap" Text="Patient by ID" VerticalAlignment="Top" Width="110"/>
+        <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Height="24" Margin="473,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
         <Label x:Name="todays_patient" Content="Today's Patient" HorizontalAlignment="Left" Margin="28,70,0,0" VerticalAlignment="Top"/>
         <Button Height="24" Width="24" Margin="596,151,33,171" Click="Button_Click">
             <Button.Template>
@@ -21,6 +21,7 @@
             </Button.Template>
         </Button>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="28,114,0,0" VerticalAlignment="Top" Height="170" Width="425"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="473,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Search for patient"/><Run Text="s"/></TextBlock>
 
     </Grid>
 </Window>

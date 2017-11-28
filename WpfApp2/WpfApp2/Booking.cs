@@ -36,7 +36,7 @@ namespace WpfApp2
             connection.deleteBooking(sqlQuery, id);
             MessageBox.Show("Booking deleted.");
         }
-        public static void viewBooking(string id)
+        public static void viewBooking(string id, bool main)
         {
 
 
@@ -55,12 +55,25 @@ namespace WpfApp2
             else
             {
                 MessageBox.Show("No booking found.");
+                if (main)
+                {
+                    main_screen frm = new main_screen();
+                    frm.Show();
+                }
+                else
+                {
+                    booking_screen frm = new booking_screen();
+                    frm.Show();
+                }
             }
 
 
 
         }
+        
+        
+}
 
 
     }
-}
+
