@@ -35,8 +35,10 @@ namespace WpfApp2
 
         private void bt_booking_Click(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             booking_screen frm = new booking_screen();
-            this.Content = frm.Content;
+            frm.Show();
+            this.Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -58,14 +60,18 @@ namespace WpfApp2
 
         private void bt_home_Click(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             main_screen frm = new main_screen();
-            this.Content = frm.Content;
+            frm.Show();
+            this.Close();
         }
 
         private void bt_staff_Click(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             staff_menu frm = new staff_menu();
-            this.Content = frm.Content;
+            frm.Show();
+            this.Close();
         }
     }
 }
