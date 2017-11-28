@@ -54,7 +54,7 @@ namespace WpfApp2
             }
             else
             {
-                MessageBox.Show("No patient found.");
+                MessageBox.Show("No booking found.");
             }
 
 
