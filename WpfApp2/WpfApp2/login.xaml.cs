@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace WpfApp2
 {
     /// <summary>
@@ -43,27 +44,8 @@ namespace WpfApp2
 
             try
             {
-
-                string query = "SELECT username FROM staff WHERE username='" + user + "'and password='" + pass + "'";
-
-                DBConnection connection = DBConnection.getDBConnectionInstance();
-                DataSet DataLogin = connection.getDataSet(query);
-
-                int count = DataLogin.Tables[0].Rows.Count;
-
-                //open main window
-                if (count == 1)
-                {
-                    MessageBox.Show("Login Successful!");
-                    this.Hide();
-                    main_screen ms = new main_screen();
-                    ms.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid credentials, please enter registered username and passsword!");
-                }
-
+                Login.verifyLogin(user, pass);
+                Hide();
             }
             catch (Exception ex)
             {
