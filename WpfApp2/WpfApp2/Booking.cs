@@ -38,8 +38,6 @@ namespace WpfApp2
         }
         public static void viewBooking(string id, bool main)
         {
-
-
             //creates the SQL query
             string query = @"SELECT *, Patients.Patient_name, Patients.Patient_surname FROM Bookings INNER JOIN Patients ON Bookings.Patient_ID = Patients.Patient_ID WHERE Booking_Id = '" + id + "';";
             DBConnection connection = DBConnection.getDBConnectionInstance();
@@ -65,15 +63,30 @@ namespace WpfApp2
                     booking_screen frm = new booking_screen();
                     frm.Show();
                 }
-            }
-
-
-
+            }      
+        }      
+        
+        public static DataTable showBookingsGrid()
+        {
+            string date = DateTime.Today.ToString("MM/dd/yyyy");
+            date = date.Split(' ')[0];
+            string sqlQuery = @"SELECT Patients.Patient_ID, Patients.Patient_name, Patients.Patient_surname, Bookings.Booking_ID, Bookings.Booking_Date, Bookings.Time, Bookings.Room FROM Patients INNER JOIN Bookings ON Patients.Patient_ID = Bookings.Patient_ID WHERE Bookings.Booking_date = '" + date + "'";
+            DBConnection connection = DBConnection.getDBConnectionInstance();
+            DataSet todayBookings = connection.getDataSet(sqlQuery);
+            DataTable dt = todayBookings.Tables[0];
+            return dt;
         }
-        
-        
-}
 
-
+        public static DataTable showBookingsGridDate(string d)
+        {
+            string date = d; 
+            date = date.Split(' ')[0];
+            string sqlQuery = @"SELECT Patients.Patient_ID, Patients.Patient_name, Patients.Patient_surname, Bookings.Booking_ID, Bookings.Booking_Date, Bookings.Time, Bookings.Room FROM Patients INNER JOIN Bookings ON Patients.Patient_ID = Bookings.Patient_ID WHERE Bookings.Booking_date = '" + date + "'";
+            DBConnection connection = DBConnection.getDBConnectionInstance();
+            DataSet todayBookings = connection.getDataSet(sqlQuery);
+            DataTable dt = todayBookings.Tables[0];
+            return dt;
+        }
     }
+}
 

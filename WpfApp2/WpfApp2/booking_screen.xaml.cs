@@ -20,32 +20,12 @@ namespace WpfApp2
     /// </summary>
     public partial class booking_screen : Window
     {
-        string bookingId;
-        DataSet bookingData;
         public booking_screen()
         {           
             InitializeComponent();
-            string date = DateTime.Today.ToString("MM/dd/yyyy");
-            date = date.Split(' ')[0];
-            string sqlQuery = @"SELECT Patients.Patient_ID, Patients.Patient_name, Patients.Patient_surname, Bookings.Booking_ID, Bookings.Booking_Date, Bookings.Time, Bookings.Room FROM Patients INNER JOIN Bookings ON Patients.Patient_ID = Bookings.Patient_ID WHERE Bookings.Booking_date = '" + date + "'";
-            DBConnection connection = DBConnection.getDBConnectionInstance();
-            DataSet todayBookings = connection.getDataSet(sqlQuery);
-            DataTable dt = todayBookings.Tables[0];
+			DataTable dt = Booking.showBookingsGrid();        		
             bookingsGrid.ItemsSource = dt.DefaultView;
         }
-
-        public booking_screen(string id, DataSet data)
-        {
-            bookingId = id;
-            bookingData = data;
-            InitializeComponent();
-        }
-
-        private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
-        {
-           
-        }
-
         private void bt_home_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
@@ -83,15 +63,20 @@ namespace WpfApp2
             {
                 //stores what's in the Searchbox in a variable
                 string id = booking_search.Text;
-                //creates the SQL query
-                this.Hide();
-                Booking.viewBooking(id, false);
-                this.Close();
+                //call viewBooking method
+                Booking.viewBooking(id, false);                
             }
             else
             {
                 MessageBox.Show("No booking found.");
             }
+        }
+
+        private void bTsearchDate_Click(object sender, RoutedEventArgs e)
+        {
+            string date = dp1.Text;
+            DataTable dn = Booking.showBookingsGridDate(date);
+            bookingsGrid.ItemsSource = dn.DefaultView;
         }
     }
 }
