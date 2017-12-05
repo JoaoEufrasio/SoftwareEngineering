@@ -29,6 +29,9 @@ namespace WpfApp2
             patientId = id;
             patientData = data;
             InitializeComponent();
+            DataTable dt = Patient.individualPatientsGrid(patientId);
+            dataGrid.ItemsSource = dt.DefaultView;
+            tb_name.Text = patientData.Tables[0].Rows[0].Field<string>("Patient_name").Trim() + " " + patientData.Tables[0].Rows[0].Field<string>("Patient_surname").Trim();
         }
 
         private void ListBoxItem_Selected(object sender, RoutedEventArgs e)

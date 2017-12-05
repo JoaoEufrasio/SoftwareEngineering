@@ -5,37 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="Individual Patient" Height="350" Width="520">
+        Title="Individual Patient" Height="350" Width="520" ResizeMode="NoResize">
     <Grid>
         <Button x:Name="bt_home" Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_home_Click"/>
         <Button x:Name="bt_booking" Content="Bookings" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_booking_Click"/>
         <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_staff_Click"/>
-        <Button x:Name="bt_test" Content="Tests" HorizontalAlignment="Left" Margin="369,63,0,0" VerticalAlignment="Top" Width="110" Cursor="Hand" Height="24"/>
-        <Button x:Name="bt_patient_record" Content="Patient Record" HorizontalAlignment="Left" Margin="262,63,0,0" VerticalAlignment="Top" Width="110" Height="24" Click="bt_patient_record_Click"/>
-        <ListView x:Name="prescriptions_list" HorizontalAlignment="Left" Height="161" Margin="340,115,0,0" VerticalAlignment="Top" Width="157">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-            <ListBoxItem Content="Start date-End date- Name-Dosage-Prescribing GP" Height="27" Width="102"/>
-            <ScrollBar x:Name="prescription_scroll_bar" Height="102" Width="23"/>
-        </ListView>
-        <Label x:Name="prescriptions" Content="Prescriptions" HorizontalAlignment="Left" Margin="340,92,0,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="24" Margin="435,92,0,0" VerticalAlignment="Top" Width="26" Source="print_icon.png"/>
-        <Image x:Name="edit" HorizontalAlignment="Left" Height="24" Margin="461,89,0,0" VerticalAlignment="Top" Width="26" Source="edit_button.png"/>
+        <Button x:Name="bt_patient_record" Content="Patient Details" HorizontalAlignment="Left" Margin="340,62,0,0" VerticalAlignment="Top" Width="110" Height="24" Click="bt_patient_record_Click"/>
         <Image x:Name="back_page" HorizontalAlignment="Left" Height="24" Margin="0,37,0,0" VerticalAlignment="Top" Width="26" Source="back_icon.ico"/>
-        <ListView HorizontalAlignment="Left" Height="161" Margin="28,115,0,0" VerticalAlignment="Top" Width="157">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-            <ListBoxItem Content="Date/Time-GP-Room-Description" Height="21" Width="118" Selected="ListBoxItem_Selected"/>
-            <ScrollBar x:Name="booking_scroll_bar" Height="109" Width="25"/>
-        </ListView>
         <Label x:Name="booking" Content="Booking" HorizontalAlignment="Left" Margin="28,90,0,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="24" Margin="159,89,0,0" VerticalAlignment="Top" Width="26" Source="edit_button.png"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="28,118,0,0" VerticalAlignment="Top" Width="422" Height="191"/>
+        <TextBlock x:Name="tb_name" HorizontalAlignment="Left" Margin="33,62,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="124"/>
 
     </Grid>
 </Window>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="main_screen" Height="377.432" Width="660.946">
+        Title="main_screen" Height="377.432" Width="660.946" ResizeMode="NoResize">
     <Grid>
         <Button x:Name="bt_bookings" Content="Booking" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37" Click="bt_bookings_Click" Margin="58,1,0,0"/>
         <Button x:Name="bt_patients" Content="Patients" HorizontalAlignment="Left" Margin="228,1,0,0" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37" Click="bt_patients_Click"/>

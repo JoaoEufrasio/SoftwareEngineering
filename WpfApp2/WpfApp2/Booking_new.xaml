@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="Booking_new" Height="429" Width="397">
+        Title="Booking_new" Height="429" Width="397" ResizeMode="NoResize">
     <Grid>
         <TextBox x:Name="Doctor" HorizontalAlignment="Left" Height="23" Margin="10,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
         <Label x:Name="lb_doctor" Content="Doctor ID" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="87"/>

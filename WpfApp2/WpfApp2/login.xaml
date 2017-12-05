@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="Login" Height="258.442" Width="363.733">
+        Title="Login" Height="258.442" Width="363.733" ResizeMode="NoResize">
     <Grid>
         <Label x:Name="login_ID" Content="Login ID:" HorizontalAlignment="Left" Margin="72,54,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
         <Label x:Name="password" Content="Password:" HorizontalAlignment="Left" Margin="61,102,0,0" VerticalAlignment="Top" Height="26" Width="68" HorizontalContentAlignment="Right"/>

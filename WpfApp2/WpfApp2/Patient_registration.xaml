@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
-        mc:Ignorable="d" Height="429" Width="397" Title="Patient Registeration">
+        mc:Ignorable="d" Height="429" Width="397" Title="Patient Registeration" ResizeMode="NoResize">
     <Grid>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,32,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top"/>
         <TextBox x:Name="Name" HorizontalAlignment="Left" Height="23" Margin="10,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.5" TextChanged="textBox_TextChanged">

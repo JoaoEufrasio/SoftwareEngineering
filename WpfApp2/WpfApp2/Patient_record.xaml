@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="Patient_record" Height="429.667" Width="397">
+        Title="Patient_record" Height="429.667" Width="397" ResizeMode="NoResize">
     <Grid>
         <TextBox x:Name="Date_of_birth" HorizontalAlignment="Left" Height="23" Margin="10,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="Address_street" HorizontalAlignment="Left" Height="23" Margin="10,211,0,0" TextWrapping="Wrap" Text="(Street)" VerticalAlignment="Top" Width="120"/>

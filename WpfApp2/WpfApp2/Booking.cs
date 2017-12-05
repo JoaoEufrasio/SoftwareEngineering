@@ -79,8 +79,12 @@ namespace WpfApp2
 
         public static DataTable showBookingsGridDate(string d)
         {
-            string date = d; 
-            date = date.Split(' ')[0];
+            string date = d;
+            string[] dateCorrection = date.Split('/');
+            date = dateCorrection[1];
+            dateCorrection[1] = dateCorrection[0];
+            dateCorrection[0] = date;
+            date = dateCorrection[0] + "/" + dateCorrection[1] + "/" + dateCorrection[2];
             string sqlQuery = @"SELECT Patients.Patient_ID, Patients.Patient_name, Patients.Patient_surname, Bookings.Booking_ID, Bookings.Booking_Date, Bookings.Time, Bookings.Room FROM Patients INNER JOIN Bookings ON Patients.Patient_ID = Bookings.Patient_ID WHERE Bookings.Booking_date = '" + date + "'";
             DBConnection connection = DBConnection.getDBConnectionInstance();
             DataSet todayBookings = connection.getDataSet(sqlQuery);

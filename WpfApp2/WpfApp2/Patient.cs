@@ -140,5 +140,14 @@ namespace WpfApp2
             DataTable dt = todayPatients.Tables[0];
             return dt;
         }
+
+        public static DataTable individualPatientsGrid(string id)
+        {
+            string sqlQuery = @"SELECT * from Bookings WHERE Patient_Id = @ID ORDER BY Booking_Date DESC;";
+            DBConnection connection = DBConnection.getDBConnectionInstance();
+            DataSet todayPatients = connection.getDataById(sqlQuery, id);
+            DataTable dt = todayPatients.Tables[0];
+            return dt;
+        }
     }
 }
