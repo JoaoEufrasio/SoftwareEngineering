@@ -33,14 +33,7 @@ namespace WpfApp2
                 && Address_city.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && Address_postcode.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c))
                 && Phone.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && Phone_emergency.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
             {
-                //creates the query
-                string sqlQuery;
-                //creates the query with parameters instead of data from the user. That data will be inserted in the query later, in the back-end
-                sqlQuery = @"INSERT INTO Patients (Patient_name, Patient_surname, Patient_date_of_birth, Patient_street, Patient_city, Patient_postcode, Patient_phone_number, Emergency_contact, Patient_email) VALUES (@Name, @Surname, @Date_of_birth, @Street, @City, @Postcode, @Phone, @Emergency_phone, @Email);";
-                DBConnection connection = DBConnection.getDBConnectionInstance();
-                //calls the registration method with all the data passed as parameters
-                connection.register(sqlQuery, Name.Text, Surname.Text, Date_of_birth.Text, Address_street.Text, Address_city.Text, Address_postcode.Text, Phone.Text, Phone_emergency.Text, Mail.Text);
-                MessageBox.Show("Patient registered.");
+                Patient.registerPatient(Name.Text, Surname.Text, Date_of_birth.Text, Address_street.Text, Address_city.Text, Address_postcode.Text, Phone.Text, Phone_emergency.Text, Mail.Text);
             }
             else
             {

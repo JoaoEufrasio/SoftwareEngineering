@@ -14,9 +14,9 @@ namespace WpfApp2
         public static void searchPatient(string id, bool main)
         {
             //creates the SQL query
-            string query = @"SELECT * FROM Patients WHERE Patient_Id = '" + id + "';";
+            string query = @"SELECT * FROM Patients WHERE Patient_Id = @ID;";
             DBConnection connection = DBConnection.getDBConnectionInstance();
-            DataSet patientData = connection.getDataSet(query);
+            DataSet patientData = connection.getDataById(query, id);
             //checks that the query returned exactly one result
             int count = patientData.Tables[0].Rows.Count;
 
@@ -48,7 +48,7 @@ namespace WpfApp2
              DBConnection connection = DBConnection.getDBConnectionInstance();
              if (name[2].Contains('/'))
              {
-                 string sqlQuery = @"SELECT * FROM Patients WHERE Patient_name = '" + name[0] + "' AND Patient_surname = '" + name[1] + "' AND Patient_date_of_birth = '" + name[2] + "';";
+                 string sqlQuery = @"SELECT * FROM Patients WHERE Patient_name = @Name AND Patient_surname = @Surname AND Patient_date_of_birth = @DobOrAddress;";
                  DataSet patientData = connection.getDataSet(sqlQuery);
                  //checks that the query returned exactly one result
                  int count = patientData.Tables[0].Rows.Count;
@@ -61,13 +61,23 @@ namespace WpfApp2
                  else
                  {
                      MessageBox.Show("No patient found.");
+                     if (main)
+                    {
+                        main_screen frm = new main_screen();
+                        frm.Show();
+                    }
+                     else
+                    {
+                        Patients frm = new Patients();
+                        frm.Show();
+                    }
                  }
              }
              else
              {
  
  
-                 string query = @"SELECT * FROM Patients WHERE Patient_name = '" + name[0] + "' AND Patient_surname = '" + name[1] + "' AND Patient_postcode = '" + name[2] + "';";
+                 string query = @"SELECT * FROM Patients WHERE Patient_name = @Name AND Patient_surname = @Surname AND Patient_postcode = @DobOrAddress;";
                  DataSet patientDataPostcode = connection.getDataSet(query);
                  //checks that the query returned exactly one result
                  int count = patientDataPostcode.Tables[0].Rows.Count;
@@ -80,13 +90,46 @@ namespace WpfApp2
                 else
                  {
                      MessageBox.Show("No patient found.");
+                    if (main)
+                    {
+                        main_screen frm = new main_screen();
+                        frm.Show();
+                    }
+                    else
+                    {
+                        Patients frm = new Patients();
+                        frm.Show();
+                    }
                 }
             }
              
              
              
          }
+        
+        public static void updatePatient(string name, string surname, string date, string street, string city, string postcode, string phone, string emergency_phone, string mail, string id)
+        {
+            //creates the query
+            string sqlQuery;
+            //creates the query with parameters instead of data from the user. That data will be inserted in the query later, in the back-end
+            sqlQuery = @"UPDATE Patients SET Patient_name = @Name, Patient_surname = @Surname, Patient_date_of_birth = @Date_of_birth, Patient_street = @Street, Patient_city = @City, Patient_postcode = @Postcode, Patient_phone_number = @Phone, Emergency_contact = @Emergency_phone, Patient_email = @Email WHERE Patient_Id = @PatientID";
+            DBConnection connection = DBConnection.getDBConnectionInstance();
+            //calls the registration method with all the data passed as parameters
+            connection.updatePatient(sqlQuery, name, surname, date, street, city, postcode, phone, emergency_phone, mail, id);
+            MessageBox.Show("Patient information updated.");
+        }
 
+        public static void registerPatient(string name, string surname, string date, string street, string city, string postcode, string phone, string emergency_phone, string mail)
+        {
+            //creates the query
+            string sqlQuery;
+            //creates the query with parameters instead of data from the user. That data will be inserted in the query later, in the back-end
+            sqlQuery = @"INSERT INTO Patients (Patient_name, Patient_surname, Patient_date_of_birth, Patient_street, Patient_city, Patient_postcode, Patient_phone_number, Emergency_contact, Patient_email) VALUES (@Name, @Surname, @Date_of_birth, @Street, @City, @Postcode, @Phone, @Emergency_phone, @Email);";
+            DBConnection connection = DBConnection.getDBConnectionInstance();
+            //calls the registration method with all the data passed as parameters
+            connection.register(sqlQuery, name, surname, date, street, city, postcode, phone, emergency_phone, mail);
+            MessageBox.Show("Patient registered.");
+        }
         public static DataTable patientsGrid()
         {
             string date = DateTime.Today.ToString("MM/dd/yyyy");

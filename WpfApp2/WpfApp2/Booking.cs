@@ -39,9 +39,9 @@ namespace WpfApp2
         public static void viewBooking(string id, bool main)
         {
             //creates the SQL query
-            string query = @"SELECT *, Patients.Patient_name, Patients.Patient_surname FROM Bookings INNER JOIN Patients ON Bookings.Patient_ID = Patients.Patient_ID WHERE Booking_Id = '" + id + "';";
+            string query = @"SELECT *, Patients.Patient_name, Patients.Patient_surname FROM Bookings INNER JOIN Patients ON Bookings.Patient_ID = Patients.Patient_ID WHERE Booking_Id = @ID;";
             DBConnection connection = DBConnection.getDBConnectionInstance();
-            DataSet bookingData = connection.getDataSet(query);
+            DataSet bookingData = connection.getDataById(query, id);
             //checks that the query returned exactly one result
             int count = bookingData.Tables[0].Rows.Count;
 
@@ -86,6 +86,16 @@ namespace WpfApp2
             DataSet todayBookings = connection.getDataSet(sqlQuery);
             DataTable dt = todayBookings.Tables[0];
             return dt;
+        }
+
+        public static void updateBooking(string id, string patientId, string doctor, string date, string time, string room, string description)
+        {
+            string sqlQuery;
+            //creates the query with parameters instead of data from the user. That data will be inserted in the query later, in the back-end
+            sqlQuery = @"UPDATE Bookings SET Patient_Id = @PatientID, Staff_Id = @DoctorID, Booking_Date = @Date, Time = @Time, Room = @Room, Description = @Description WHERE Booking_Id = '" + id + "';";
+            DBConnection connection = DBConnection.getDBConnectionInstance();
+            connection.book(sqlQuery, patientId, doctor, date, time, room, description);
+            System.Windows.MessageBox.Show("Booking updated.");
         }
     }
 }

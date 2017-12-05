@@ -87,6 +87,7 @@
     <Compile Include="individual patient.xaml.cs">
       <DependentUpon>individual patient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs" />
     <Compile Include="login.xaml.cs">
       <DependentUpon>login.xaml</DependentUpon>
     </Compile>

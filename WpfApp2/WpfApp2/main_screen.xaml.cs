@@ -23,12 +23,7 @@ namespace WpfApp2
         public main_screen()
         {
             InitializeComponent();
-            string date = DateTime.Today.ToString("MM/dd/yyyy");
-            date = date.Split(' ')[0];
-            string sqlQuery = @"SELECT Patients.Patient_ID AS ID, Patients.Patient_name AS Name, Patients.Patient_surname AS Surname, Bookings.Booking_ID AS Booking, Bookings.Time, Bookings.Room FROM Patients INNER JOIN Bookings ON Patients.Patient_ID = Bookings.Patient_ID WHERE Bookings.Booking_date = '" + date + "'";
-            DBConnection connection = DBConnection.getDBConnectionInstance();
-            DataSet todayPatients = connection.getDataSet(sqlQuery);
-            DataTable dt = todayPatients.Tables[0];
+            DataTable dt = Login.mainScreenData();
             dataGrid.ItemsSource = dt.DefaultView;
             //int count = todayPatients.Tables[0].Rows.Count;
             
@@ -74,16 +69,32 @@ namespace WpfApp2
                   if (search_patient.Text.Contains(' '))
                   {
                      string[] data = search_patient.Text.Split(' ');
-                     this.Hide();
-                     Patient.searchPatientName(data, true);
-                     this.Close();
+                    if (data.Length == 3)
+                    {
+                        this.Hide();
+                        Patient.searchPatientName(data, true);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data entered is invalid. Please only enter name, surname and either postcode or date of birth.");
+                    }
  
                   }
                   else
                   {
-                     this.Hide();
-                     Patient.searchPatient(id, true);
-                     this.Close();
+                    int number;
+                    bool isNumber = Int32.TryParse(id, out number);
+                    if (isNumber)
+                    {
+                        this.Hide();
+                        Patient.searchPatient(id, true);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data entered is invalid. Please check for errors and try again.");
+                    }
                   }
  
  

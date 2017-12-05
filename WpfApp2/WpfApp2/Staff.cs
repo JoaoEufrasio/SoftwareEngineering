@@ -13,12 +13,12 @@ namespace WpfApp2
     {
         public static void viewStaff(string id)
         {
-            string query = @"SELECT * FROM Staff WHERE Staff_ID = '" + id + "';";
+            string query = @"SELECT * FROM Staff WHERE Staff_ID = @ID;";
 
 
             //connect to database
             DBConnection connection = DBConnection.getDBConnectionInstance();
-            DataSet staffData = connection.getDataSet(query);
+            DataSet staffData = connection.getDataById(query, id);
             int count = staffData.Tables[0].Rows.Count;
 
             //makes sure exactly one result was found
@@ -59,11 +59,10 @@ namespace WpfApp2
             string date = DateTime.Today.ToString("MM/dd/yyyy");
             date = date.Split(' ')[0];
             //creates the query
-            string sqlQuery = @"SELECT Shifts.Start_time AS 'Shift start', Shifts.End_time AS 'Shift end' FROM Shifts WHERE Shifts.Staff_Id = '" + id + "' AND Shifts.Shift_date = '" + date + "';";
-            string bookingsQuery = @"SELECT Time FROM Bookings WHERE Staff_Id = '" + id + "' AND Booking_Date = '" + date + "';";
+            string sqlQuery = @"SELECT Shifts.Start_time AS 'Shift start', Shifts.End_time AS 'Shift end' FROM Shifts WHERE Shifts.Staff_Id = @ID AND Shifts.Shift_date = '" + date + "';";
             DBConnection connection = DBConnection.getDBConnectionInstance();
             //retrieves data
-            DataSet todayShifts = connection.getDataSet(sqlQuery);
+            DataSet todayShifts = connection.getDataById(sqlQuery, id);
             //stores that data in a single table and returns it so it can be displayed in the datagrid
             DataTable dt = todayShifts.Tables[0];
             return dt;
@@ -75,10 +74,10 @@ namespace WpfApp2
             string date = DateTime.Today.ToString("MM/dd/yyyy");
             date = date.Split(' ')[0];
             //creates the query
-            string bookingsQuery = @"SELECT Time FROM Bookings WHERE Staff_Id = '" + id + "' AND Booking_Date = '" + date + "';";
+            string bookingsQuery = @"SELECT Time FROM Bookings WHERE Staff_Id = @ID AND Booking_Date = '" + date + "';";
             DBConnection connection = DBConnection.getDBConnectionInstance();
             //retrieves data
-            DataSet todayBookings = connection.getDataSet(bookingsQuery);
+            DataSet todayBookings = connection.getDataById(bookingsQuery, id);
             //stores that data in a single table and returns it so it can be displayed in the datagrid
             DataTable dt = todayBookings.Tables[0];
             return dt;

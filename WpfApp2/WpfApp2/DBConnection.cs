@@ -77,6 +77,57 @@ namespace WpfApp2
             return dataSet;
         }
 
+        public DataSet getDataById(string sqlStatement, string id)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlStatement;
+            //inserts the data in the query
+            command.Parameters.Add(new SqlParameter("ID", id));
+            openConnection();
+            command.Connection = connectionToDB;
+            dataAdapter = new SqlDataAdapter(command);
+            DataSet dataSet = new DataSet();
+            dataAdapter.Fill(dataSet);
+            closeConnection();
+            return dataSet;
+        }
+        public DataSet login(string sqlStatement, string user, string pass)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlStatement;
+            //inserts the data in the query
+            command.Parameters.Add(new SqlParameter("User", user));
+            command.Parameters.Add(new SqlParameter("Password", pass));
+            openConnection();
+            command.Connection = connectionToDB;
+            dataAdapter = new SqlDataAdapter(command);
+            DataSet dataSet = new DataSet();
+            dataAdapter.Fill(dataSet);
+            closeConnection();
+            return dataSet;
+
+        }
+        
+        public DataSet searchPatientByName(string sqlStatement, string name, string surname, string dobOrAddress)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlStatement;
+            //inserts the data in the query
+            command.Parameters.Add(new SqlParameter("Name", name));
+            command.Parameters.Add(new SqlParameter("Surname", surname));
+            command.Parameters.Add(new SqlParameter("DobOrAddress", dobOrAddress));
+            openConnection();
+            command.Connection = connectionToDB;
+            dataAdapter = new SqlDataAdapter(command);
+            DataSet dataSet = new DataSet();
+            dataAdapter.Fill(dataSet);
+            closeConnection();
+            return dataSet;
+        }
+
         //create a patient record in the database. Data from the user is inserted into the query here as parameters, rather than directly on the front-end
         public void register(string sqlQuery, string name, string surname, string date_of_birth, string street, string city, string postcode, string phone, string emergency_phone, string email)
         {

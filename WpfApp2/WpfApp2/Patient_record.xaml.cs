@@ -56,14 +56,8 @@ namespace WpfApp2
                 && Address_city.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && Address_postcode.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c))
                 && Phone.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && Phone_emergency.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
                 {
-                    //creates the query
-                    string sqlQuery;
-                    //creates the query with parameters instead of data from the user. That data will be inserted in the query later, in the back-end
-                    sqlQuery = @"UPDATE Patients SET Patient_name = @Name, Patient_surname = @Surname, Patient_date_of_birth = @Date_of_birth, Patient_street = @Street, Patient_city = @City, Patient_postcode = @Postcode, Patient_phone_number = @Phone, Emergency_contact = @Emergency_phone, Patient_email = @Email WHERE Patient_Id = @PatientID";
-                    DBConnection connection = DBConnection.getDBConnectionInstance();
-                    //calls the registration method with all the data passed as parameters
-                    connection.updatePatient(sqlQuery, Name.Text, Surname.Text, Date_of_birth.Text, Address_street.Text, Address_city.Text, Address_postcode.Text, Phone.Text, Phone_emergency.Text, Mail.Text, id);
-                    MessageBox.Show("Patient information updated.");
+                    Patient.updatePatient(Name.Text, Surname.Text, Date_of_birth.Text, Address_street.Text, Address_city.Text, Address_postcode.Text, Phone.Text, Phone_emergency.Text, Mail.Text, id);
+                    
                 }
                 else
                 {

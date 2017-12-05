@@ -53,24 +53,7 @@ namespace WpfApp2
                 Booking.cancelBooking(tb_bookingid.Text);
             }
         }
-        public void ViewBookings()
-        {
-            string query = "SELECT * FROM Bookings WHERE Patient_Id = 1";
-            // (Patient_id, Staff_Id , Booking_date, Time, Room, Description) VALUES('Patient_Id', 'Staff_Id', 'Date', 'Time', 'Room', @tb_description)
-            //connect to database
-            DBConnection connection = DBConnection.getDBConnectionInstance();
-            DataSet DataLogin = connection.getDataSet(query);
-
-            DataRow bookingData = DataLogin.Tables[0].Rows[0];
-
-            tb_bookingid.Text = bookingData["Booking_Id"].ToString();
-            tb_patientid.Text = bookingData["Patient_Id"].ToString();
-            tb_name.Text = bookingData["Patient_name"].ToString();
-            tb_date.Text = bookingData["Time"].ToString();
-            tb_doctor.Text = bookingData["Staff_Id"].ToString();
-            tb_room.Text = bookingData["Room"].ToString();
-            tb_description.Text = bookingData["Description"].ToString();
-        }
+       
 
         private void tb_name_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -89,12 +72,11 @@ namespace WpfApp2
                     && tb_time.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && tb_room.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
                 {
                     //creates the query
-                    string sqlQuery;
-                    //creates the query with parameters instead of data from the user. That data will be inserted in the query later, in the back-end
-                    sqlQuery = @"UPDATE Bookings SET Patient_Id = @PatientID, Staff_Id = @DoctorID, Booking_Date = @Date, Time = @Time, Room = @Room, Description = @Description WHERE Booking_Id = 7002";
-                    DBConnection connection = DBConnection.getDBConnectionInstance();
-                    connection.book(sqlQuery, tb_patientid.Text, tb_doctor.Text, tb_date.Text, tb_time.Text, tb_room.Text, tb_description.Text);
-                    System.Windows.MessageBox.Show("Booking updated.");
+                    Booking.updateBooking(bookingId, tb_patientid.Text, tb_doctor.Text, tb_date.Text, tb_time.Text, tb_room.Text, tb_description.Text);
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("Data entered is invalid. Please check for errors and try again.");
                 }
 
             }

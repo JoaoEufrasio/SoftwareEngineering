@@ -86,25 +86,7 @@ namespace WpfApp2
             frm.Show();
             this.Close();
         }
-        public void viewStaffDetails()
-        {
-            string query = "SELECT * FROM Staff WHERE Staff_Id = 1";
-            //connect to database
-            DBConnection connection = DBConnection.getDBConnectionInstance();
-            DataSet DataLogin = connection.getDataSet(query);
-
-            DataRow viewStaff = DataLogin.Tables[0].Rows[0];
-
-
-
-            tb_staff_id.Text = viewStaff["Staff_ID"].ToString();
-            tb_staff_name.Text = viewStaff["Staff_name"].ToString();
-            tb_address.Text = viewStaff["Staff_street"].ToString();
-            tb_dob.Text = viewStaff["Staff_date_of_birth"].ToString();
-            tb_contact_details.Text = viewStaff["Staff_phone_number"].ToString();
-
-
-        }
+        
         
 
 

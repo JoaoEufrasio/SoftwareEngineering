@@ -50,16 +50,32 @@ namespace WpfApp2
                 if (SearchBox.Text.Contains(' '))
                 {
                     string[] data = SearchBox.Text.Split(' ');
-                    this.Hide();
-                    Patient.searchPatientName(data, false);
-                    this.Close();
+                    if (data.Length == 3)
+                    {
+                        this.Hide();
+                        Patient.searchPatientName(data, true);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data entered is invalid. Please only enter name, surname and either postcode or date of birth.");
+                    }
 
                 }
                 else
                 {
-                    this.Hide();
-                    Patient.searchPatient(id, false);
-                    this.Close();
+                    int number;
+                    bool isNumber = Int32.TryParse(id, out number);
+                    if (isNumber)
+                    {
+                        this.Hide();
+                        Patient.searchPatient(id, true);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data entered is invalid. Please check for errors and try again.");
+                    }
                 }
 
 

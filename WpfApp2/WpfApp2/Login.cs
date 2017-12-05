@@ -15,10 +15,10 @@ namespace WpfApp2
         {     
                 string user = u;
                 string pass = p;
-                string query = "SELECT username FROM staff WHERE username='" + user + "'and password='" + pass + "'";
+                string query = "SELECT username FROM staff WHERE username=@User and password=@Password";
 
                 DBConnection connection = DBConnection.getDBConnectionInstance();
-                DataSet DataLogin = connection.getDataSet(query);
+                DataSet DataLogin = connection.login(query, user, pass);
 
                 int count = DataLogin.Tables[0].Rows.Count;
 
@@ -37,6 +37,17 @@ namespace WpfApp2
                 }
 
             }
+
+        public static DataTable mainScreenData()
+        {
+            string date = DateTime.Today.ToString("MM/dd/yyyy");
+            date = date.Split(' ')[0];
+            string sqlQuery = @"SELECT Patients.Patient_ID AS ID, Patients.Patient_name AS Name, Patients.Patient_surname AS Surname, Bookings.Booking_ID AS Booking, Bookings.Time, Bookings.Room FROM Patients INNER JOIN Bookings ON Patients.Patient_ID = Bookings.Patient_ID WHERE Bookings.Booking_date = '" + date + "'";
+            DBConnection connection = DBConnection.getDBConnectionInstance();
+            DataSet todayPatients = connection.getDataSet(sqlQuery);
+            DataTable dt = todayPatients.Tables[0];
+            return dt;
+        } 
             
         }
     }
