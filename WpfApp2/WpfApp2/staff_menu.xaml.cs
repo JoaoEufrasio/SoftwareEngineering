@@ -75,7 +75,7 @@ namespace WpfApp2
 
         private void Search_Staff(object sender, RoutedEventArgs e)
         {
-            if (SearchBox.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
+            if (SearchBox.Text.Any(c => Char.IsDigit(c) || Char.IsWhiteSpace(c)))
             {
                 //stores what's in the Searchbox in a variable
                 string id = SearchBox.Text;             

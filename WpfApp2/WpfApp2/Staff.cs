@@ -29,9 +29,7 @@ namespace WpfApp2
             }
             else
             {
-                MessageBox.Show("No staff member found.");
-                staff_menu frm = new staff_menu();
-                frm.Show();
+                MessageBox.Show("No staff member found.");            
             }
         
 

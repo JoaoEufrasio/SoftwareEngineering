@@ -71,9 +71,9 @@ namespace WpfApp2
                      string[] data = search_patient.Text.Split(' ');
                     if (data.Length == 3)
                     {
-                        this.Hide();
+                        //this.Hide();
                         Patient.searchPatientName(data, true);
-                        this.Close();
+                       // this.Close();
                     }
                     else
                     {
@@ -87,18 +87,15 @@ namespace WpfApp2
                     bool isNumber = Int32.TryParse(id, out number);
                     if (isNumber)
                     {
-                        this.Hide();
+                        //this.Hide();
                         Patient.searchPatient(id, true);
-                        this.Close();
+                       // this.Close();
                     }
                     else
                     {
                         MessageBox.Show("Data entered is invalid. Please check for errors and try again.");
                     }
                   }
- 
- 
-
                  }
                  else
                  {
