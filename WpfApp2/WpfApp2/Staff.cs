@@ -80,5 +80,19 @@ namespace WpfApp2
             DataTable dt = todayBookings.Tables[0];
             return dt;
         }
+        public static DataTable showShiftsGridDate(string d)
+        {
+            string date = d;
+            string[] dateCorrection = date.Split('/');
+            date = dateCorrection[1];
+            dateCorrection[1] = dateCorrection[0];
+            dateCorrection[0] = date;
+            date = dateCorrection[0] + "/" + dateCorrection[1] + "/" + dateCorrection[2];
+            string sqlQuery = @"SELECT Staff.Staff_name AS Name, Staff.Staff_surname AS Surname, Shifts.Start_time AS 'Shift start', Shifts.End_time AS 'Shift end' FROM Shifts INNER JOIN Staff ON Shifts.Staff_Id = Staff.Staff_Id WHERE Shifts.Shift_date = '" + date + "';";
+            DBConnection connection = DBConnection.getDBConnectionInstance();
+            DataSet todayShifts = connection.getDataSet(sqlQuery);
+            DataTable dt = todayShifts.Tables[0];
+            return dt;
+        }
     }
 }

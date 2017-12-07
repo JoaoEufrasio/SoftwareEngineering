@@ -21,9 +21,9 @@ namespace WpfApp2
     public partial class booking_screen : Window
     {
         public booking_screen()
-        {           
+        {
             InitializeComponent();
-			DataTable dt = Booking.showBookingsGrid();        		
+            DataTable dt = Booking.showBookingsGrid();
             bookingsGrid.ItemsSource = dt.DefaultView;
         }
         private void bt_home_Click(object sender, RoutedEventArgs e)
@@ -54,9 +54,9 @@ namespace WpfApp2
         private void bt_new_booking_Click(object sender, RoutedEventArgs e)
         {
             Booking_new frm = new Booking_new();
-            frm.Show();          
+            frm.Show();
         }
-                
+
         private void bTsearch_Click(object sender, RoutedEventArgs e)
         {
             if (booking_search.Text.Any(c => Char.IsDigit(c)))
@@ -64,7 +64,7 @@ namespace WpfApp2
                 //stores what's in the Searchbox in a variable
                 string id = booking_search.Text;
                 //call viewBooking method
-                Booking.viewBooking(id);                
+                Booking.viewBooking(id);
             }
             else
             {
@@ -74,9 +74,16 @@ namespace WpfApp2
 
         private void bTsearchDate_Click(object sender, RoutedEventArgs e)
         {
-            string date = dp1.Text;
-            DataTable dn = Booking.showBookingsGridDate(date);
-            bookingsGrid.ItemsSource = dn.DefaultView;
+            if (dp1.Text == "")
+            {
+                MessageBox.Show("Pick a date please.");
+            }
+            else
+            {
+                string date = dp1.Text;
+                DataTable dn = Booking.showBookingsGridDate(date);
+                bookingsGrid.ItemsSource = dn.DefaultView;
+            }
         }
     }
 }

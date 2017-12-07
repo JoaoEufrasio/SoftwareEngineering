@@ -45,25 +45,7 @@ namespace WpfApp2
 
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void staff_on_duty_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void staff_name_id_shift_Selected(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
 
         private void btn_home_Click(object sender, RoutedEventArgs e)
         {
@@ -87,6 +69,20 @@ namespace WpfApp2
             else
             {
                 MessageBox.Show("No staff member found.");
+            }
+        }
+
+        private void gettodayshifts(object sender, RoutedEventArgs e)
+        {
+            if (dp2.Text == "")
+            {
+                MessageBox.Show("Pick a date please.");
+            }
+            else
+            { 
+            string date = dp2.Text;
+            DataTable dn = Staff.showShiftsGridDate(date);
+            dataGrid.ItemsSource = dn.DefaultView;
             }
         }
     }
