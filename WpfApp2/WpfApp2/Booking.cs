@@ -36,7 +36,7 @@ namespace WpfApp2
             connection.deleteBooking(sqlQuery, id);
             MessageBox.Show("Booking deleted.");
         }
-        public static void viewBooking(string id, bool main)
+        public static void viewBooking(string id)
         {
             //creates the SQL query
             string query = @"SELECT *, Patients.Patient_name, Patients.Patient_surname FROM Bookings INNER JOIN Patients ON Bookings.Patient_ID = Patients.Patient_ID WHERE Booking_Id = @ID;";
@@ -52,17 +52,7 @@ namespace WpfApp2
             }
             else
             {
-                MessageBox.Show("No booking found.");
-                if (main)
-                {
-                    main_screen frm = new main_screen();
-                    frm.Show();
-                }
-                else
-                {
-                    booking_screen frm = new booking_screen();
-                    frm.Show();
-                }
+                MessageBox.Show("No booking found.");              
             }      
         }      
         

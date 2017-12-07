@@ -59,12 +59,12 @@ namespace WpfApp2
                 
         private void bTsearch_Click(object sender, RoutedEventArgs e)
         {
-            if (booking_search.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
+            if (booking_search.Text.Any(c => Char.IsDigit(c)))
             {
                 //stores what's in the Searchbox in a variable
                 string id = booking_search.Text;
                 //call viewBooking method
-                Booking.viewBooking(id, false);                
+                Booking.viewBooking(id);                
             }
             else
             {
