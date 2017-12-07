@@ -7,14 +7,10 @@
         mc:Ignorable="d"
         Title="Individual Patient" Height="350" Width="520" ResizeMode="NoResize">
     <Grid>
-        <Button x:Name="bt_home" Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_home_Click"/>
-        <Button x:Name="bt_booking" Content="Bookings" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_booking_Click"/>
-        <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_staff_Click"/>
-        <Button x:Name="bt_patient_record" Content="Patient Details" HorizontalAlignment="Left" Margin="340,62,0,0" VerticalAlignment="Top" Width="110" Height="24" Click="bt_patient_record_Click"/>
-        <Image x:Name="back_page" HorizontalAlignment="Left" Height="24" Margin="0,37,0,0" VerticalAlignment="Top" Width="26" Source="back_icon.ico"/>
-        <Label x:Name="booking" Content="Booking" HorizontalAlignment="Left" Margin="28,90,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="28,118,0,0" VerticalAlignment="Top" Width="422" Height="191"/>
-        <TextBlock x:Name="tb_name" HorizontalAlignment="Left" Margin="33,62,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="124"/>
+        <Button x:Name="bt_patient_record" Content="Patient Details" HorizontalAlignment="Left" Margin="340,26,0,0" VerticalAlignment="Top" Width="110" Height="24" Click="bt_patient_record_Click"/>
+        <Label x:Name="booking" Content="Bookings" HorizontalAlignment="Left" Margin="28,68,0,0" VerticalAlignment="Top" Height="28"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="28,98,0,0" VerticalAlignment="Top" Width="422" Height="204"/>
+        <TextBlock x:Name="tb_name" HorizontalAlignment="Left" Margin="33,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Text="TextBlock" FontWeight="Bold"/>
 
     </Grid>
 </Window>

@@ -78,8 +78,7 @@ namespace WpfApp2
             if (SearchBox.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
             {
                 //stores what's in the Searchbox in a variable
-                string id = SearchBox.Text;
-                this.Hide();
+                string id = SearchBox.Text;             
                 Staff.viewStaff(id);
                 
                 //checks that the query returned exactly one result

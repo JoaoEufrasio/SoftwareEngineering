@@ -111,12 +111,8 @@ namespace WpfApp2
             if (search_booking.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
             {
                 //stores what's in the Searchbox in a variable
-                string id = search_booking.Text;
-                this.Hide();
-                
+                string id = search_booking.Text;             
                 Booking.viewBooking(id, true);
-                this.Close();
-
             }
             else
             {

@@ -8,13 +8,13 @@
         Title="Bookings" Height="400" Width="800
         " ResizeMode="NoResize">
     <Grid>
-        <Button x:Name="bt_home" Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_home_Click" Margin="21,20,0,0"/>
-        <Button x:Name="bt_patients" Content="Patients" HorizontalAlignment="Left" Margin="191,20,0,0" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37" Click="bt_patients_Click"/>
-        <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="361,20,0,0" VerticalAlignment="Top" Width="170" Height="37" Click="bt_staff_Click"/>
-        <Button x:Name="bt_new_booking" Content="New Booking" HorizontalAlignment="Left" Margin="23,320,0,0" VerticalAlignment="Top" Width="110" Height="24" Click="bt_new_booking_Click"/>
-        <TextBox x:Name="booking_search" HorizontalAlignment="Left" Height="24" Margin="657,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
-        <DataGrid x:Name="bookingsGrid" AutoGenerateColumns="True" HorizontalAlignment="Left" Margin="22,86,0,0" VerticalAlignment="Top" Height="216" Width="575"/>
-        <Button x:Name="bTsearch" Content="Search" HorizontalAlignment="Left" Margin="626,113,0,0" VerticalAlignment="Top" Width="24" Click="bTsearch_Click" >
+        <Button x:Name="bt_home" Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="37" Cursor="Hand" Click="bt_home_Click" Margin="21,14,0,0"/>
+        <Button x:Name="bt_patients" Content="Patients" HorizontalAlignment="Left" Margin="191,14,0,0" VerticalAlignment="Top" Width="170" Cursor="Hand" Height="37" Click="bt_patients_Click"/>
+        <Button x:Name="bt_staff" Content="Staff" HorizontalAlignment="Left" Margin="361,14,0,0" VerticalAlignment="Top" Width="170" Height="37" Click="bt_staff_Click"/>
+        <Button x:Name="bt_new_booking" Content="New Booking" HorizontalAlignment="Left" Margin="23,327,0,0" VerticalAlignment="Top" Width="110" Height="24" Click="bt_new_booking_Click"/>
+        <TextBox x:Name="booking_search" HorizontalAlignment="Left" Height="24" Margin="622,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <DataGrid x:Name="bookingsGrid" AutoGenerateColumns="True" HorizontalAlignment="Left" Margin="22,90,0,0" VerticalAlignment="Top" Height="216" Width="575"/>
+        <Button x:Name="bTsearch" Content="Search" HorizontalAlignment="Left" Margin="744,120,0,0" VerticalAlignment="Top" Width="24" Click="bTsearch_Click" >
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="search_icon.png"/>
@@ -23,8 +23,8 @@
         </Button>
         <Label x:Name="label" Content="Today's Bookings" HorizontalAlignment="Left" Margin="22,53,0,0" VerticalAlignment="Top" FontSize="13.333"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="626,86,0,0" TextWrapping="Wrap" Text="Search by ID" VerticalAlignment="Top"/>
-        <DatePicker x:Name="dp1" HorizontalAlignment="Left" Margin="666,225,0,0" VerticalAlignment="Top" IsTodayHighlighted="True"/>
-        <Button x:Name="bTsearchDate" Content="Button" HorizontalAlignment="Left" Margin="626,225,0,0" VerticalAlignment="Top" Width="24" Click="bTsearchDate_Click">
+        <DatePicker x:Name="dp1" HorizontalAlignment="Left" Margin="622,236,0,0" VerticalAlignment="Top" IsTodayHighlighted="True"/>
+        <Button x:Name="bTsearchDate" Content="Button" HorizontalAlignment="Left" Margin="744,236,0,0" VerticalAlignment="Top" Width="24" Click="bTsearchDate_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="search_icon.png"/>

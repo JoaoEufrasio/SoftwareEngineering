@@ -41,54 +41,5 @@ namespace WpfApp2
             bookingsGrid.ItemsSource = bookings.DefaultView;
 
         }
-
-        private void bt_bookings_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void bt_patients_Click(object sender, RoutedEventArgs e)
-        {
-            this.Hide();
-            Patients frm = new Patients();
-            frm.Show();
-            this.Close();
-        }
-
-        private void bt_home_Click(object sender, RoutedEventArgs e)
-        {
-            this.Hide();
-            main_screen frm = new main_screen();
-            frm.Show();
-            this.Close();
-
-        }
-
-        private void btn_ookings_Click(object sender, RoutedEventArgs e)
-        {
-            this.Hide();
-            booking_screen frm = new booking_screen();
-            frm.Show();
-            this.Close();
-        }
-        
-        
-
-
     }
 }
