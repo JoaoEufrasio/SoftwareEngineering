@@ -24,6 +24,7 @@ namespace WpfApp2
         //the constructor gets passed the ID of the patient this information belongs to and the actual dataset
         string patientId;
         DataSet patientData;
+        //G
         public individual_patient(string id, DataSet data)
         {
             patientId = id;
@@ -38,6 +39,7 @@ namespace WpfApp2
         {
 
         }
+        //A
         private void bt_cancel_booking_Click(object sender, RoutedEventArgs e)
         {
             // confirmation pop up message

@@ -23,7 +23,7 @@ namespace WpfApp2
         {
             InitializeComponent();
         }
-
+        //G
         private void bt_confirm_booking_Click(object sender, RoutedEventArgs e)
         {
             //code taken from https://stackoverflow.com/questions/4503542/check-for-special-characters-in-a-string

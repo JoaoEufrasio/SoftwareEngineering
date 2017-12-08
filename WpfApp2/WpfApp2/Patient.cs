@@ -11,6 +11,7 @@ namespace WpfApp2
 {
     static class Patient
     {
+        //G
         public static void searchPatient(string id, bool main)
         {
             //creates the SQL query
@@ -40,7 +41,7 @@ namespace WpfApp2
                 }
             }
         }
-
+        //G
         public static void searchPatientName(string[] name, bool main)
          {
  
@@ -49,7 +50,7 @@ namespace WpfApp2
              if (name[2].Contains('/'))
              {
                  string sqlQuery = @"SELECT * FROM Patients WHERE Patient_name = @Name AND Patient_surname = @Surname AND Patient_date_of_birth = @DobOrAddress;";
-                 DataSet patientData = connection.getDataSet(sqlQuery);
+                 DataSet patientData = connection.searchPatientByName(sqlQuery, name[0], name[1], name[2]);
                  //checks that the query returned exactly one result
                  int count = patientData.Tables[0].Rows.Count;
  
@@ -78,7 +79,7 @@ namespace WpfApp2
  
  
                  string query = @"SELECT * FROM Patients WHERE Patient_name = @Name AND Patient_surname = @Surname AND Patient_postcode = @DobOrAddress;";
-                 DataSet patientDataPostcode = connection.getDataSet(query);
+                 DataSet patientDataPostcode = connection.searchPatientByName(query, name[0], name[1], name[2]);
                  //checks that the query returned exactly one result
                  int count = patientDataPostcode.Tables[0].Rows.Count;
  
@@ -91,7 +92,7 @@ namespace WpfApp2
                  {
                      MessageBox.Show("No patient found.");
                     if (main)
-                    {
+                    { 
                         main_screen frm = new main_screen();
                         frm.Show();
                     }
@@ -106,7 +107,7 @@ namespace WpfApp2
              
              
          }
-        
+        //G
         public static void updatePatient(string name, string surname, string date, string street, string city, string postcode, string phone, string emergency_phone, string mail, string id)
         {
             //creates the query
@@ -118,7 +119,7 @@ namespace WpfApp2
             connection.updatePatient(sqlQuery, name, surname, date, street, city, postcode, phone, emergency_phone, mail, id);
             MessageBox.Show("Patient information updated.");
         }
-
+        //G
         public static void registerPatient(string name, string surname, string date, string street, string city, string postcode, string phone, string emergency_phone, string mail)
         {
             //creates the query
@@ -130,6 +131,7 @@ namespace WpfApp2
             connection.register(sqlQuery, name, surname, date, street, city, postcode, phone, emergency_phone, mail);
             MessageBox.Show("Patient registered.");
         }
+        //J
         public static DataTable patientsGrid()
         {
             string date = DateTime.Today.ToString("MM/dd/yyyy");
@@ -140,7 +142,7 @@ namespace WpfApp2
             DataTable dt = todayPatients.Tables[0];
             return dt;
         }
-
+        //J
         public static DataTable individualPatientsGrid(string id)
         {
             string sqlQuery = @"SELECT * from Bookings WHERE Patient_Id = @ID ORDER BY Booking_Date DESC;";

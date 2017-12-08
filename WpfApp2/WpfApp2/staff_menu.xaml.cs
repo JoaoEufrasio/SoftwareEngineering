@@ -54,7 +54,7 @@ namespace WpfApp2
             frm.Show();
             this.Close();
         }
-
+        //A
         private void Search_Staff(object sender, RoutedEventArgs e)
         {
             if (SearchBox.Text.Any(c => Char.IsDigit(c) || Char.IsWhiteSpace(c)))
@@ -71,7 +71,7 @@ namespace WpfApp2
                 MessageBox.Show("No staff member found.");
             }
         }
-
+        //J
         private void gettodayshifts(object sender, RoutedEventArgs e)
         {
             if (dp2.Text == "")

@@ -22,6 +22,7 @@ namespace WpfApp2
     {
         string staffId;
         DataSet staffData;
+        //A
         public staff_individual(string id, DataSet data)
         {
             InitializeComponent();

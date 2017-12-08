@@ -58,7 +58,7 @@ namespace WpfApp2
             Patient_registration frm = new Patient_registration();
             frm.Show();
         }
-
+        //G
         private void button_searchPatient(object sender, RoutedEventArgs e)
          {
             
@@ -71,9 +71,9 @@ namespace WpfApp2
                      string[] data = search_patient.Text.Split(' ');
                     if (data.Length == 3)
                     {
-                        //this.Hide();
+                        this.Hide();
                         Patient.searchPatientName(data, true);
-                       // this.Close();
+                        this.Close();
                     }
                     else
                     {
@@ -87,9 +87,9 @@ namespace WpfApp2
                     bool isNumber = Int32.TryParse(id, out number);
                     if (isNumber)
                     {
-                        //this.Hide();
+                        this.Hide();
                         Patient.searchPatient(id, true);
-                       // this.Close();
+                        this.Close();
                     }
                     else
                     {
@@ -102,7 +102,7 @@ namespace WpfApp2
                     MessageBox.Show("No patient found.");
                  }
              }
-
+        //J
         private void button_searchBooking(object sender, RoutedEventArgs e)
         {
             if (search_booking.Text.Any(c => Char.IsDigit(c) || Char.IsWhiteSpace(c)))

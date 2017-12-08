@@ -10,7 +10,7 @@ namespace WpfApp2
 {
     class Login
     {
-
+        //J
         public static void verifyLogin(string u, string p)
         {     
                 string user = u;
@@ -37,7 +37,7 @@ namespace WpfApp2
                 }
 
             }
-
+        //G
         public static DataTable mainScreenData()
         {
             string date = DateTime.Today.ToString("MM/dd/yyyy");

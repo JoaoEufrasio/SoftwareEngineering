@@ -25,7 +25,7 @@ namespace WpfApp2
         {
             InitializeComponent();
         }
-
+        //J
         private void bt_login_Click(object sender, RoutedEventArgs e)
         {
             //variables for username and password input

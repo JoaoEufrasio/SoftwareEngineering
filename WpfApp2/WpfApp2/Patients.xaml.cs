@@ -52,9 +52,9 @@ namespace WpfApp2
                     string[] data = SearchBox.Text.Split(' ');
                     if (data.Length == 3)
                     {
-                        //this.Hide();
-                        Patient.searchPatientName(data, true);
-                      //  this.Close();
+                        this.Hide();
+                        Patient.searchPatientName(data, false);
+                        this.Close();
                     }
                     else
                     {
@@ -68,9 +68,9 @@ namespace WpfApp2
                     bool isNumber = Int32.TryParse(id, out number);
                     if (isNumber)
                     {
-                       // this.Hide();
-                        Patient.searchPatient(id, true);
-                      //  this.Close();
+                        this.Hide();
+                        Patient.searchPatient(id, false);
+                        this.Close();
                     }
                     else
                     {

@@ -22,7 +22,7 @@ namespace WpfApp2
     {
         string id;
         DataSet patientData;
-
+        //G
         public Patient_record(string patientID, DataSet data)
         {
             //the constructor gets passed the ID of the patient this information belongs to and the actual dataset
@@ -43,7 +43,7 @@ namespace WpfApp2
         }
 
         
-
+        //G
         private void button_Click_1(object sender, RoutedEventArgs e)
         {
             if (System.Windows.MessageBox.Show("Are you sure want to save changes", "Save Patient Changes",

@@ -76,7 +76,7 @@ namespace WpfApp2
 
             return dataSet;
         }
-
+        //G
         public DataSet getDataById(string sqlStatement, string id)
         {
             SqlCommand command = new SqlCommand();
@@ -92,6 +92,7 @@ namespace WpfApp2
             closeConnection();
             return dataSet;
         }
+        //G
         public DataSet login(string sqlStatement, string user, string pass)
         {
             SqlCommand command = new SqlCommand();
@@ -109,7 +110,7 @@ namespace WpfApp2
             return dataSet;
 
         }
-        
+        //G
         public DataSet searchPatientByName(string sqlStatement, string name, string surname, string dobOrAddress)
         {
             SqlCommand command = new SqlCommand();
@@ -129,6 +130,7 @@ namespace WpfApp2
         }
 
         //create a patient record in the database. Data from the user is inserted into the query here as parameters, rather than directly on the front-end
+        //G
         public void register(string sqlQuery, string name, string surname, string date_of_birth, string street, string city, string postcode, string phone, string emergency_phone, string email)
         {
             SqlCommand command = new SqlCommand();
@@ -153,6 +155,7 @@ namespace WpfApp2
         }
 
         //update a patient record in the database
+        //G
         public void updatePatient(string sqlQuery, string name, string surname, string date_of_birth, string street, string city, string postcode, string phone, string emergency_phone, string email, string id)
         {
             SqlCommand command = new SqlCommand();
@@ -197,31 +200,7 @@ namespace WpfApp2
             command.ExecuteNonQuery();
             closeConnection();
         }
-
-
-
-
-        /*
-        * Insert the name and age into the DB
-        */
-        public void insert(string sqlQuery, String name, int age)
-        {
-            SqlCommand command = new SqlCommand();
-            command.CommandType = CommandType.Text;
-            command.CommandText = sqlQuery;
-            command.Parameters.Add(new SqlParameter("Name", name));
-            command.Parameters.Add(new SqlParameter("Age", age));
-
-            openConnection();
-            command.Connection = connectionToDB;
-
-            int noRows = command.ExecuteNonQuery();
-
-            closeConnection();
-
-            Console.WriteLine("n-" + noRows);
-        }
-
+        //J
         public void deleteBooking(string sqlQuery, string bookingID)
         {
             SqlCommand command = new SqlCommand();

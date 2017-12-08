@@ -25,6 +25,7 @@ namespace WpfApp2
     {
         string bookingId;
         DataSet bookingData;
+        //G
         public Individual_bookings(string id, DataSet data)
         {
             InitializeComponent();
@@ -44,7 +45,7 @@ namespace WpfApp2
             tb_bookingid.Text = id;
             //Booking.viewBooking();
         }
-
+        //A
         private void bt_cancel_booking_Click(object sender, RoutedEventArgs e)
         {
             if (System.Windows.MessageBox.Show("Are you sure want to save changes", "Save Booking Changes",
@@ -59,7 +60,7 @@ namespace WpfApp2
         {
 
         }
-
+        //G
         private void bt_save_changes_Click(object sender, RoutedEventArgs e)
         {
             if (System.Windows.MessageBox.Show("Are you sure want to save changes", "Save Booking Changes",

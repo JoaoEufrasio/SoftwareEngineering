@@ -24,7 +24,7 @@ namespace WpfApp2
         {
             InitializeComponent();
         }
-
+        //G
         private void button_Click(object sender, RoutedEventArgs e)
         {
             string[] dateValidation = Date_of_birth.Text.Split('/');

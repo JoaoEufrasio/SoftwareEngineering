@@ -11,6 +11,7 @@ namespace WpfApp2
 {
     static class Staff
     {
+        //A
         public static void viewStaff(string id)
         {
             string query = @"SELECT * FROM Staff WHERE Staff_ID = @ID;";
@@ -35,6 +36,7 @@ namespace WpfApp2
 
 
         }
+        //G
 
         public static DataTable shiftsGrid()
         {
@@ -42,7 +44,7 @@ namespace WpfApp2
             string date = DateTime.Today.ToString("MM/dd/yyyy");
             date = date.Split(' ')[0];
             //creates the query
-            string sqlQuery = @"SELECT Staff.Staff_name AS Name, Staff.Staff_surname AS Surname, Shifts.Start_time AS 'Shift start', Shifts.End_time AS 'Shift end' FROM Shifts INNER JOIN Staff ON Shifts.Staff_Id = Staff.Staff_Id WHERE Shifts.Shift_date = '" + date + "' AND Staff.Role = GP;";
+            string sqlQuery = @"SELECT Staff.Staff_name AS Name, Staff.Staff_surname AS Surname, Shifts.Start_time AS 'Shift start', Shifts.End_time AS 'Shift end' FROM Shifts INNER JOIN Staff ON Shifts.Staff_Id = Staff.Staff_Id WHERE Shifts.Shift_date = '" + date + "' AND Staff.Role = 'GP';";
             DBConnection connection = DBConnection.getDBConnectionInstance();
             //retrieves data
             DataSet todayStaff = connection.getDataSet(sqlQuery);
@@ -50,7 +52,7 @@ namespace WpfApp2
             DataTable dt = todayStaff.Tables[0];
             return dt;
         }
-
+        //G
         public static DataTable individualShiftsGrid(string id)
         {
             //gets today's date and formats it appropriately (removes the time)
@@ -65,7 +67,7 @@ namespace WpfApp2
             DataTable dt = todayShifts.Tables[0];
             return dt;
         }
-
+        //G
         public static DataTable individualBookingGrid(string id)
         {
             //gets today's date and formats it appropriately (removes the time)
@@ -80,6 +82,7 @@ namespace WpfApp2
             DataTable dt = todayBookings.Tables[0];
             return dt;
         }
+        //J
         public static DataTable showShiftsGridDate(string d)
         {
             string date = d;

@@ -71,7 +71,7 @@ namespace WpfApp2
                 MessageBox.Show("No booking found.");
             }
         }
-
+        //J
         private void bTsearchDate_Click(object sender, RoutedEventArgs e)
         {
             if (dp1.Text == "")

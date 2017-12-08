@@ -12,7 +12,7 @@ namespace WpfApp2
     static class Booking 
     {
         
-
+        //G
         public static void createBooking(string id, string doctor, string date, string time, string room, string description)
         {
             //code taken from https://stackoverflow.com/questions/4503542/check-for-special-characters-in-a-string
@@ -27,6 +27,7 @@ namespace WpfApp2
             connection.book(sqlQuery, id, doctor, date, time, room, description);
                
         }
+        //J
         public static void cancelBooking(string id)
         {
             string sqlQuery;
@@ -36,6 +37,7 @@ namespace WpfApp2
             connection.deleteBooking(sqlQuery, id);
             MessageBox.Show("Booking deleted.");
         }
+
         public static void viewBooking(string id)
         {
             //creates the SQL query
@@ -55,7 +57,7 @@ namespace WpfApp2
                 MessageBox.Show("No booking found.");              
             }      
         }      
-        
+        //G
         public static DataTable showBookingsGrid()
         {
             string date = DateTime.Today.ToString("MM/dd/yyyy");
@@ -66,7 +68,7 @@ namespace WpfApp2
             DataTable dt = todayBookings.Tables[0];
             return dt;
         }
-
+        //J
         public static DataTable showBookingsGridDate(string d)
         {
             string date = d;
@@ -81,7 +83,7 @@ namespace WpfApp2
             DataTable dt = todayBookings.Tables[0];
             return dt;
         }
-
+        //G
         public static void updateBooking(string id, string patientId, string doctor, string date, string time, string room, string description)
         {
             string sqlQuery;
