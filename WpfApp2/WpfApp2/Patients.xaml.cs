@@ -30,7 +30,7 @@ namespace WpfApp2
         private void bt_register_patient_Click(object sender, RoutedEventArgs e)
         {
             Patient_registration frm = new Patient_registration();
-            this.Content = frm.Content;
+            frm.Show();
         }
 
         private void bt_booking_Click(object sender, RoutedEventArgs e)

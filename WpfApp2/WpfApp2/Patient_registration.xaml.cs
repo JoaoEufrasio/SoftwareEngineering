@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -45,7 +46,15 @@ namespace WpfApp2
                         && Address_city.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && Address_postcode.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c))
                         && Phone.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && Phone_emergency.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
                     {
-                        Patient.registerPatient(Name.Text, Surname.Text, Date_of_birth.Text, Address_street.Text, Address_city.Text, Address_postcode.Text, Phone.Text, Phone_emergency.Text, Mail.Text);
+                        try
+                        {
+                            Patient.registerPatient(Name.Text, Surname.Text, Date_of_birth.Text, Address_street.Text, Address_city.Text, Address_postcode.Text, Phone.Text, Phone_emergency.Text, Mail.Text);
+                            this.Close();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Some or all of the data fields have invalid content. Please check the data entered");
+                        }
                     }
                     else
                     {

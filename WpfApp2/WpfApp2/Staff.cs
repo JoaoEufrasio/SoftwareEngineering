@@ -42,7 +42,7 @@ namespace WpfApp2
             string date = DateTime.Today.ToString("MM/dd/yyyy");
             date = date.Split(' ')[0];
             //creates the query
-            string sqlQuery = @"SELECT Staff.Staff_name AS Name, Staff.Staff_surname AS Surname, Shifts.Start_time AS 'Shift start', Shifts.End_time AS 'Shift end' FROM Shifts INNER JOIN Staff ON Shifts.Staff_Id = Staff.Staff_Id WHERE Shifts.Shift_date = '" + date + "';";
+            string sqlQuery = @"SELECT Staff.Staff_name AS Name, Staff.Staff_surname AS Surname, Shifts.Start_time AS 'Shift start', Shifts.End_time AS 'Shift end' FROM Shifts INNER JOIN Staff ON Shifts.Staff_Id = Staff.Staff_Id WHERE Shifts.Shift_date = '" + date + "' AND Staff.Role = GP;";
             DBConnection connection = DBConnection.getDBConnectionInstance();
             //retrieves data
             DataSet todayStaff = connection.getDataSet(sqlQuery);

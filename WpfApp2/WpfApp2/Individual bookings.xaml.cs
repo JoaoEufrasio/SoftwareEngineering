@@ -71,8 +71,14 @@ namespace WpfApp2
                     && tb_doctor.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && tb_date.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c))
                     && tb_time.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && tb_room.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
                 {
-                    //creates the query
-                    Booking.updateBooking(bookingId, tb_patientid.Text, tb_doctor.Text, tb_date.Text, tb_time.Text, tb_room.Text, tb_description.Text);
+                    try
+                    {
+                        Booking.updateBooking(bookingId, tb_patientid.Text, tb_doctor.Text, tb_date.Text, tb_time.Text, tb_room.Text, tb_description.Text);
+                    }
+                    catch
+                    {
+                        System.Windows.Forms.MessageBox.Show("Data entered is invalid. Please check for errors and try again");
+                    }
                 }
                 else
                 {

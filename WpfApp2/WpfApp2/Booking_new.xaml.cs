@@ -32,8 +32,16 @@ namespace WpfApp2
                 && Doctor.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && Date.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c))
                 && Time.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)) && Room.Text.Any(c => Char.IsLetterOrDigit(c) || Char.IsWhiteSpace(c)))
             {
-                Booking.createBooking(ID.Text, Doctor.Text, Date.Text, Time.Text, Room.Text, Description.Text);
-                MessageBox.Show("Booking created.");
+                try
+                {
+                    Booking.createBooking(ID.Text, Doctor.Text, Date.Text, Time.Text, Room.Text, Description.Text);
+                    MessageBox.Show("Booking created.");
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Some or all of the data fields have invalid content. Please check the data entered.");
+                }
             }
             else
                 MessageBox.Show("Some or all of the data fields have invalid content. Please check the data entered.");
