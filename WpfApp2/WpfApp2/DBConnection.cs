@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,8 +42,10 @@ namespace WpfApp2
         // Open the connection
         public void openConnection()
         {
-            
-            ConnectionStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=K:\SoftwareEngineering-master\SoftwareEngineering-master\WpfApp2\WpfApp2\Database1.mdf;Integrated Security=True";
+            string filepath = Directory.GetCurrentDirectory();
+            string[] dividedPath = filepath.Split('\\');
+            filepath = dividedPath[0] + "\\" + dividedPath[1] + "\\" + dividedPath[2] + "\\" + dividedPath[3] + "\\" + dividedPath[4] + "\\" + dividedPath[5] + "\\";
+            ConnectionStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + filepath + "Database1.mdf;Integrated Security=True";
             // create the connection to the database as an instance of SqlConnection
             connectionToDB = new SqlConnection(connectionString);
 

@@ -62,7 +62,7 @@ namespace WpfApp2
         {
             string date = DateTime.Today.ToString("MM/dd/yyyy");
             date = date.Split(' ')[0];
-            string sqlQuery = @"SELECT Patients.Patient_ID, Patients.Patient_name, Patients.Patient_surname, Bookings.Booking_ID, Bookings.Booking_Date, Bookings.Time, Bookings.Room FROM Patients INNER JOIN Bookings ON Patients.Patient_ID = Bookings.Patient_ID WHERE Bookings.Booking_date = '" + date + "'";
+            string sqlQuery = @"SELECT Patients.Patient_ID AS 'ID', Patients.Patient_name AS 'Name', Patients.Patient_surname AS 'Surname', Staff.Staff_id AS 'Staff ID', Bookings.Booking_ID AS 'Booking ID', Bookings.Booking_Date AS 'Date', Bookings.Time AS 'Time', Bookings.Room AS 'Room', Bookings.Description FROM Bookings INNER JOIN Patients ON Patients.Patient_ID = Bookings.Patient_ID INNER JOIN Staff on Bookings.Staff_ID = Staff.Staff_ID WHERE Bookings.Booking_date = '" + date + "'";
             DBConnection connection = DBConnection.getDBConnectionInstance();
             DataSet todayBookings = connection.getDataSet(sqlQuery);
             DataTable dt = todayBookings.Tables[0];
@@ -71,13 +71,15 @@ namespace WpfApp2
         //J
         public static DataTable showBookingsGridDate(string d)
         {
+            //Stores the date from the datepicker
             string date = d;
+            //Turns the date around to the MM/DD/YYYY format, which will not give an error
             string[] dateCorrection = date.Split('/');
             date = dateCorrection[1];
             dateCorrection[1] = dateCorrection[0];
             dateCorrection[0] = date;
             date = dateCorrection[0] + "/" + dateCorrection[1] + "/" + dateCorrection[2];
-            string sqlQuery = @"SELECT Patients.Patient_ID, Patients.Patient_name, Patients.Patient_surname, Bookings.Booking_ID, Bookings.Booking_Date, Bookings.Time, Bookings.Room FROM Patients INNER JOIN Bookings ON Patients.Patient_ID = Bookings.Patient_ID WHERE Bookings.Booking_date = '" + date + "'";
+            string sqlQuery = @"SELECT Patients.Patient_ID AS 'ID', Patients.Patient_name AS 'Name', Patients.Patient_surname AS 'Surname', Staff.Staff_id AS 'Staff ID', Bookings.Booking_ID AS 'Booking ID', Bookings.Booking_Date AS 'Date', Bookings.Time AS 'Time', Bookings.Room AS 'Room', Bookings.Description FROM Bookings INNER JOIN Patients ON Patients.Patient_ID = Bookings.Patient_ID INNER JOIN Staff on Bookings.Staff_ID = Staff.Staff_ID WHERE Bookings.Booking_date = '" + date + "'";
             DBConnection connection = DBConnection.getDBConnectionInstance();
             DataSet todayBookings = connection.getDataSet(sqlQuery);
             DataTable dt = todayBookings.Tables[0];
