@@ -37,5 +37,6 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        <Label Content="Search for shifts" HorizontalAlignment="Left" Margin="592,221,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
